@@ -85,7 +85,7 @@
                 <div class="container">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-3 profile1" style="padding-bottom:40px;">
                         <div class="thinborder-ontop">
-                            <h3>User Info</h3>
+                            <h3>Info utilisateurs</h3>
                             <x-jet-validation-errors class="mb-4" />
                             <form id="userregisterationform" method="POST" action="{{ route('register') }}">
                                 @csrf

@@ -29,13 +29,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="visible-md visible-lg text-left">
-                            <li><a href="tel:+911234567890"><i class="fa fa-phone"></i> +91-1234567890</a></li>
+                            <li><a href="tel:+22892655030"><i class="fa fa-phone"></i> +228 92 65 50 30</a></li>
                             <li><a href="mailto:contact@surfsidemedia.in"><i class="fa fa-envelope"></i>
                                     contact@surfsidemedia.in</a></li>
                         </ul>
                         <ul class="visible-xs visible-sm">
-                            <li class="text-left"><a href="tel:+911234567890"><i class="fa fa-phone"></i>
-                                    +91-1234567890</a></li>
+                            <li class="text-left"><a href="tel:+22892655030"><i class="fa fa-phone"></i>
+                                    +228 92 65 50 30</a></li>
                             <li class="text-right"><a href="index.php/changelocation.html"><i
                                         class="fa fa-map-marker"></i> Faridabad, Haryana</a></li>
                         </ul>
@@ -59,7 +59,8 @@
                     <li class="title">
                         <a href="/"><img src="{{ asset('images/logo.png') }}"></a>
                     </li>
-                    <li> <a href="javascript:void(0);">Air Conditioners</a>
+                    <li> <a href="{{ route('service.categories') }}">Catégories des services</a></li>
+                    {{-- <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="service-details/ac-wet-servicing.html">Wet Servicing</a></li>
                             <li><a href="service-details/ac-dry-servicing.html">Dry Servicing</a></li>
@@ -69,7 +70,7 @@
                             <li><a href="service-details/ac-gas-refill.html">Gas Refill</a></li>
                             <li><a href="service-details/ac-repair.html">Repair</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li> <a href="#">Appliances</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="servicesbycategory/11.html">Computer Repair</a></li>
@@ -128,7 +129,8 @@
                             @if (Auth::user()->utype === 'ADM')
                                 <li class="login-form"> <a href="#" title="Register">Mon compte(Admin)</a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{route('admin.dashboard')}}">DashBoard</a></li>
+                                        <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                                        <li><a href="{{route('admin.service_categories')}}">Catégories des services</a></li>
                                         <li><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
                                         </li>
@@ -225,7 +227,7 @@
                                         href="mailto:contact@surfsidemedia.in">contact@surfsidemedia.in</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-headphones"></i> <a href="tel:+911234567890">+91-1234567890</a>
+                                    <i class="fa fa-headphones"></i> <a href="tel:+22892655030">+228 92 65 50 30</a>
                                 </li>
                             </ul>
                             <h3 style="margin-top: 10px">FOLLOW US</h3>
@@ -250,7 +252,7 @@
                                         href="mailto:contact@surfsidemedia.in">contact@surfsidemedia.in</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-phone"></i> <a href="tel:+911234567890">+91-1234567890</a>
+                                    <i class="fa fa-phone"></i> <a href="tel:+22892655030">+228 92 65 50 30</a>
                                 </li>
                             </ul>
                             <ul class="social mlist-h">

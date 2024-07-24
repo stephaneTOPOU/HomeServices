@@ -73,7 +73,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6 profile1" style="min-height: 300px;">
                             <div class="thinborder-ontop">
-                                <h3>Connexion</h3>
+                                <h3>Info Connexion</h3>
                                 <x-jet-validation-errors class="mb-4" />
                                 <form id="userloginform" method="POST" action="{{ route('login') }}">
                                     @csrf
