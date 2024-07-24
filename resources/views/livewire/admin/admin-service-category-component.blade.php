@@ -29,27 +29,41 @@
                 <div class="container">
                     <div class="row portfolioContainer">
                         <div class="col-md-12 profile1">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Image</th>
-                                        <th>Name</th>
-                                        <th>Slug</th>                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($categories as $category)
-                                        <tr>
-                                            <td>{{ $category->id }}</td>
-                                            <td><img src="{{ asset('images/categories') }}/{{ $category->image }}" alt="{{ $category->name }}" width="60"/></td>
-                                            <td>{{ $category->name }}</td>
-                                            <td>{{ $category->slug }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            {{ $categories->links() }}
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Toutes les catégories de service
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="{{ route('admin.service_cat.add') }}" class="btn btn-info pull-right">Ajouter une catégorie</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Image</th>
+                                                <th>Name</th>
+                                                <th>Slug</th>                                        
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($categories as $category)
+                                                <tr>
+                                                    <td>{{ $category->id }}</td>
+                                                    <td><img src="{{ asset('images/categories') }}/{{ $category->image }}" alt="{{ $category->name }}" width="60"/></td>
+                                                    <td>{{ $category->name }}</td>
+                                                    <td>{{ $category->slug }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                    {{ $categories->links() }}
+                                </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>
