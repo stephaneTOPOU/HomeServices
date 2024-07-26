@@ -74,8 +74,8 @@
                                                     </td>
                                                     <td>{{ $service->created_at }}</td>
                                                     <td>
-                                                        <a href="#"><i class="fa fa-edit fa-2x text-info"></i></a>
-                                                        <a href="#" onclick="confirm('Voulez - vous supprimer cet Service !?') || event.stopImmediatePropagation()" wire:click.prevent="#" style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
+                                                        <a href="{{route('amin.service.edit',['service_slug'=>$service->slug])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                                        <a href="#" onclick="confirm('Voulez - vous supprimer cet Service !?') || event.stopImmediatePropagation()" wire:click.prevent="deleteService({{ $service->id }})" style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

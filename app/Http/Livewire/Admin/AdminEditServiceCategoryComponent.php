@@ -65,6 +65,7 @@ class AdminEditServiceCategoryComponent extends Component
         $scategory->slug = $this->slug;
 
         if ($this->newimage) {
+            unlink('images/categories'.'/'.$scategory->image);
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();
             $this->newimage->storeAs('categories', $imageName);
             $scategory->image = $imageName;
