@@ -6,7 +6,7 @@
                 <h1>Categories des services</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('home') }}">Acceuil</a></li>
                         <li>/</li>
                         <li>Categories des services</li>
                     </ul>
@@ -31,7 +31,7 @@
                         @foreach ($categories as $category)
                             <li>
                                 <div class="item-service-line">
-                                    <i class="fa"><a href="#"><img class="icon-img"
+                                    <i class="fa"><a href="{{route('home.service',['category_slug'=>$category->slug])}}"><img class="icon-img"
                                                 src="{{ asset('images/categories') }}/{{ $category->image }}" alt="{{ $category->name }}"></a></i>
                                     <h5>{{ $category->name }}</h5>
                                 </div>

@@ -11,7 +11,7 @@ class Service extends Model
 
     protected $table = "services";
 
-    public function category () 
+    public function service_categories()
     {
         return $this->belongsTo(ServiceCategory::class, 'service_category_id');
     }

@@ -16,7 +16,7 @@ class ServiceFactory extends Factory
     {
         $service_name = $this->faker->unique()->words($nb=4,$asText=true);
         $slug = Str::slug($service_name, "-");
-        $imagename = 'service_'.$this->faker->unique()->numberBetween(1,20). 'jpg';
+        $imagename = 'service_'.$this->faker->unique()->numberBetween(1,20). '.jpg';
         return [
             'name' => $service_name,
             'slug' => $slug,

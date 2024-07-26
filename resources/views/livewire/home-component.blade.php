@@ -44,7 +44,7 @@
                             @foreach ($categories as $category)
                                 <li data-toggle="tooltip" title="" data-original-title="{{ $category->name }}">
                                     <a
-                                        href="#">
+                                        href="{{route('home.service',['category_slug'=>$category->slug])}}">
                                         <img src="{{ asset('images/categories') }}/{{ $category->image }}" alt="{{ $category->name }}">
                                     </a>
                                 </li>

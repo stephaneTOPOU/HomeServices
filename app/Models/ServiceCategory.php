@@ -11,7 +11,7 @@ class ServiceCategory extends Model
 
     protected $table = "service_categories";
 
-    public function service ()
+    public function services ()
     {
         return $this->hasMany(Service::class);
     }

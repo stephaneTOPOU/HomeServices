@@ -12,12 +12,12 @@
         <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
-                <h1>Catégories des services</h1>
+                <h1>Tous les services</h1>
                 <div class="crumbs">
                     <ul>
                         <li><a href="{{ route('home') }}">Acceuil</a></li>
                         <li>/</li>
-                        <li>Catégories des services</li>
+                        <li>Tous les services</li>
                     </ul>
                 </div>
             </div>
@@ -33,10 +33,10 @@
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            Toutes les catégories de service
+                                            Tous les service
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="{{ route('admin.service_cat.add') }}" class="btn btn-info pull-right">Ajouter une catégorie</a>
+                                            <a href="{{ route('admin.service.add') }}" class="btn btn-info pull-right">Ajouter un service</a>
                                         </div>
                                     </div>
                                 </div>
@@ -48,29 +48,40 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>Catégorie</th>
                                                 <th>Image</th>
                                                 <th>Name</th>
-                                                <th>Slug</th>                                        
+                                                <th>Prix</th>                                        
+                                                <th>Status</th>                                        
+                                                <th>Date</th>                                        
                                                 <th>Action</th>                                        
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($categories as $category)
+                                            @foreach ($services as $service)
                                                 <tr>
-                                                    <td>{{ $category->id }}</td>
-                                                    <td><img src="{{ asset('images/categories') }}/{{ $category->image }}" alt="{{ $category->name }}" width="60"/></td>
-                                                    <td>{{ $category->name }}</td>
-                                                    <td>{{ $category->slug }}</td>
+                                                    <td>{{ $service->id }}</td>
+                                                    <td>{{ $service->service_categories->name }}</td>
+                                                    <td><img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}" alt="{{ $service->name }}" width="60"/></td>
+                                                    <td>{{ $service->name }}</td>
+                                                    <td>{{ $service->price }}</td>
                                                     <td>
-                                                        <a href="{{ route('admin.services_by_cat',['category_slug'=>$category->slug]) }}" style="margin-right: 10px"><i class="fa fa-list fa-2x text-info"></i></a>
-                                                        <a href="{{ route('admin.service_cat.edit',['category_id'=>$category->id]) }}"><i class="fa fa-edit fa-2x text-info"></i></a>
-                                                        <a href="#" onclick="confirm('Voulez - vous supprimer cette catégorie !?') || event.stopImmediatePropagation()" wire:click.prevent="deleteCategory({{ $category->id }})" style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
+                                                        @if ($service->status)
+                                                            Active
+                                                        @else
+                                                            Inactive
+                                                        @endif
+                                                    </td>
+                                                    <td>{{ $service->created_at }}</td>
+                                                    <td>
+                                                        <a href="#"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                                        <a href="#" onclick="confirm('Voulez - vous supprimer cet Service !?') || event.stopImmediatePropagation()" wire:click.prevent="#" style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    {{ $categories->links() }}
+                                    {{ $services->links() }}
                                 </div>
                             </div>                            
                         </div>
