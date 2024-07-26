@@ -11,6 +11,7 @@ use Livewire\WithFileUploads;
 class AdminAddServiceCategoryComponent extends Component
 {
     use WithFileUploads;
+    
     public $name;
     public $slug;
     public $image;
