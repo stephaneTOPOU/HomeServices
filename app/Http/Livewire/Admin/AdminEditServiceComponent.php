@@ -112,6 +112,8 @@ class AdminEditServiceComponent extends Component
         $service->tagline = $this->tagline;
         $service->service_category_id = $this->service_category_id;
         $service->price = $this->price;
+        $service->discount = $this->discount; 
+        $service->discount_type = $this->discount_type;
         $service->description = $this->description;
 
         $service->inclusion = str_replace("\n",'|',trim($this->inclusion));

@@ -11,6 +11,7 @@ use App\Http\Livewire\Admin\AdminServicesByCategoryComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
+use App\Http\Livewire\ServiceDetailComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeComponent::class)->name('home');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('service.categories');
 Route::get('/{category_slug}/service', ServicesByCategoryComponent::class)->name('home.service');
+Route::get('service/{service_slug}', ServiceDetailComponent::class)->name('home.service.detail');
 
 
 //Pour les clients
