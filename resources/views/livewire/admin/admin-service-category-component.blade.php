@@ -50,7 +50,8 @@
                                                 <th>#</th>
                                                 <th>Image</th>
                                                 <th>Name</th>
-                                                <th>Slug</th>                                        
+                                                <th>Slug</th> 
+                                                <th>En vedette</th>                                       
                                                 <th>Action</th>                                        
                                             </tr>
                                         </thead>
@@ -61,6 +62,13 @@
                                                     <td><img src="{{ asset('images/categories') }}/{{ $category->image }}" alt="{{ $category->name }}" width="60"/></td>
                                                     <td>{{ $category->name }}</td>
                                                     <td>{{ $category->slug }}</td>
+                                                    <td>
+                                                        @if ($category->featured)
+                                                            Oui
+                                                        @else
+                                                            Non
+                                                        @endif
+                                                    </td>
                                                     <td>
                                                         <a href="{{ route('admin.services_by_cat',['category_slug'=>$category->slug]) }}" style="margin-right: 10px"><i class="fa fa-list fa-2x text-info"></i></a>
                                                         <a href="{{ route('admin.service_cat.edit',['category_id'=>$category->id]) }}"><i class="fa fa-edit fa-2x text-info"></i></a>

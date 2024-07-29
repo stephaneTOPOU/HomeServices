@@ -18,6 +18,8 @@ class AdminEditServiceCategoryComponent extends Component
     public $image;
     public $newimage;
 
+    public $featured;
+
     public function mount($category_id)
     {
         $scategories = ServiceCategory::find($category_id);
@@ -26,6 +28,7 @@ class AdminEditServiceCategoryComponent extends Component
         $this->name = $scategories->name;
         $this->slug = $scategories->slug;
         $this->image = $scategories->image;
+        $this->featured = $scategories->featured;
     }
 
     public function generateSlug()
@@ -70,6 +73,8 @@ class AdminEditServiceCategoryComponent extends Component
             $this->newimage->storeAs('categories', $imageName);
             $scategory->image = $imageName;
         }
+
+        $scategory->featured = $this->featured;
 
         $scategory->save();
         session()->flash('message', 'Catégorie modifiée avec succes !');

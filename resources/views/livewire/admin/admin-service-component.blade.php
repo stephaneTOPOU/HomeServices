@@ -52,7 +52,8 @@
                                                 <th>Image</th>
                                                 <th>Name</th>
                                                 <th>Prix</th>                                        
-                                                <th>Status</th>                                        
+                                                <th>Status</th>
+                                                <th>En vedette</th>                                        
                                                 <th>Date</th>                                        
                                                 <th>Action</th>                                        
                                             </tr>
@@ -70,6 +71,13 @@
                                                             Active
                                                         @else
                                                             Inactive
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @if ($service->featured)
+                                                            Oui
+                                                        @else
+                                                            Non
                                                         @endif
                                                     </td>
                                                     <td>{{ $service->created_at }}</td>

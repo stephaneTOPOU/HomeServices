@@ -117,6 +117,16 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="featured" class="control-label col-sm-4">En vedette : </label>
+                                            <div class="col-sm-8">
+                                                <select name="featured" id="" class="form-control" wire:model="featured">                                                    
+                                                    <option value="0">Non</option>
+                                                    <option value="1">oui</option>
+                                                </select>                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="description" class="control-label col-sm-4">Description : </label>
                                             <div class="col-sm-8">
                                                 <textarea name="description" id="" cols="30" rows="5" class="form-control" wire:model="description"></textarea>
