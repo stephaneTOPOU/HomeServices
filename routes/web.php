@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SearchController;
 use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
 use App\Http\Livewire\Admin\AdminAddSliderComponent;
@@ -38,6 +39,10 @@ Route::get('/', HomeComponent::class)->name('home');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('service.categories');
 Route::get('/{category_slug}/service', ServicesByCategoryComponent::class)->name('home.service');
 Route::get('service/{service_slug}', ServiceDetailComponent::class)->name('home.service.detail');
+
+
+Route::get('/autocomplete', [SearchController::class, 'autoComplete'])->name('autocomplete');
+Route::post('/search', [SearchController::class, 'search'])->name('search');
 
 
 //Pour les clients
