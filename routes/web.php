@@ -2,12 +2,15 @@
 
 use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
+use App\Http\Livewire\Admin\AdminAddSliderComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditServiceComponent;
+use App\Http\Livewire\Admin\AdminEditSliderComponent;
 use App\Http\Livewire\Admin\AdminServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminServiceComponent;
 use App\Http\Livewire\Admin\AdminServicesByCategoryComponent;
+use App\Http\Livewire\Admin\AdminSliderComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
@@ -54,8 +57,12 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/service-categories', AdminServiceCategoryComponent::class)->name('admin.service_categories');
     Route::get('/admin/service-categories/add', AdminAddServiceCategoryComponent::class)->name('admin.service_cat.add');
     Route::get('/admin/service-categories/edit/{category_id}', AdminEditServiceCategoryComponent::class)->name('admin.service_cat.edit');
-    Route::get('admin/all-service',AdminServiceComponent::class)->name('admin.service');
+    Route::get('/admin/all-service',AdminServiceComponent::class)->name('admin.service');
     Route::get('/admin/{category_slug}/services', AdminServicesByCategoryComponent::class)->name('admin.services_by_cat');
     Route::get('/admin/service/add', AdminAddServiceComponent::class)->name('admin.service.add');
     Route::get('/admin/service/edit/{service_slug}', AdminEditServiceComponent::class)->name('amin.service.edit');
+
+    Route::get('/admin/slider', AdminSliderComponent::class)->name('admin.slider');
+    Route::get('/admin/slider/add', AdminAddSliderComponent::class)->name('admin.add_slider');
+    Route::get('/admin/slider/edit/{slide_id}', AdminEditSliderComponent::class)->name('admin.edit_slider');
 });

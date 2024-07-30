@@ -131,7 +131,8 @@
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                                         <li><a href="{{route('admin.service_categories')}}">Catégories services</a></li>
-                                        <li><a href="{{route('admin.service')}}">Services</a></li>
+                                        <li><a href="{{route('admin.service')}}">Les services</a></li>
+                                        <li><a href="{{route('admin.slider')}}">Les sliders</a></li>
                                         <li><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
                                         </li>

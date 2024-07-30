@@ -12,12 +12,12 @@
         <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
-                <h1>Tous les services</h1>
+                <h1>Tous les slides</h1>
                 <div class="crumbs">
                     <ul>
                         <li><a href="{{ route('home') }}">Acceuil</a></li>
                         <li>/</li>
-                        <li>Tous les services</li>
+                        <li>Tous les slides</li>
                     </ul>
                 </div>
             </div>
@@ -33,10 +33,10 @@
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            Tous les service
+                                            Tous les slides
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="{{ route('admin.service.add') }}" class="btn btn-info pull-right">Ajouter un service</a>
+                                            <a href="{{ route('admin.add_slider') }}" class="btn btn-info pull-right">Ajouter un slide</a>
                                         </div>
                                     </div>
                                 </div>
@@ -47,49 +47,37 @@
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Catégorie</th>
+                                                <th>#</th>                                                
                                                 <th>Image</th>
-                                                <th>Name</th>
-                                                <th>Prix</th>                                        
-                                                <th>Status</th>
-                                                <th>En vedette</th>                                        
+                                                <th>Titre</th>
+                                                <th>Status</th>                                                                                      
                                                 <th>Date</th>                                        
                                                 <th>Action</th>                                        
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($services as $service)
+                                            @foreach ($slides as $slide)
                                                 <tr>
-                                                    <td>{{ $service->id }}</td>
-                                                    <td>{{ $service->service_categories->name }}</td>
-                                                    <td><img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}" alt="{{ $service->name }}" width="60"/></td>
-                                                    <td>{{ $service->name }}</td>
-                                                    <td>{{ $service->price }}</td>
+                                                    <td>{{ $slide->id }}</td>                                                    
+                                                    <td><img src="{{ asset('images/slider') }}/{{ $slide->image }}" alt="{{ $slide->name }}" width="60"/></td>                                                    
+                                                    <td>{{ $slide->title }}</td>
                                                     <td>
-                                                        @if ($service->status)
+                                                        @if ($slide->status)
                                                             Active
                                                         @else
                                                             Inactive
                                                         @endif
                                                     </td>
+                                                    <td>{{ $slide->created_at }}</td>
                                                     <td>
-                                                        @if ($service->featured)
-                                                            Oui
-                                                        @else
-                                                            Non
-                                                        @endif
-                                                    </td>
-                                                    <td>{{ $service->created_at }}</td>
-                                                    <td>
-                                                        <a href="{{route('amin.service.edit',['service_slug'=>$service->slug])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
-                                                        <a href="#" onclick="confirm('Voulez - vous supprimer ce Service !?') || event.stopImmediatePropagation()" wire:click.prevent="deleteService({{ $service->id }})" style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
+                                                        <a href="{{route('admin.edit_slider',['slide_id'=>$slide->id])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                                        <a href="#" onclick="confirm('Voulez - vous supprimer ce Slide !?') || event.stopImmediatePropagation()" wire:click.prevent="deleteSlide({{ $slide->id }})" style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    {{ $services->links() }}
+                                    {{ $slides->links() }}
                                 </div>
                             </div>                            
                         </div>
