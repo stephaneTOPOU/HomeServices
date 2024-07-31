@@ -19,6 +19,7 @@ use App\Http\Livewire\ServiceCategoriesComponent;
 use App\Http\Livewire\ServiceDetailComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
+use App\Http\Livewire\Sprovider\SproviderProfileComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +58,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 //Pour les Prestataires de services
 Route::middleware(['auth:sanctum', 'verified', 'authsprovider'])->group(function () {
     Route::get('/service-provider/dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
+    Route::get('/sprovider-profile', SproviderProfileComponent::class)->name('sprovider.profile');
 });
 
 
