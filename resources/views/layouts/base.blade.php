@@ -30,8 +30,8 @@
                     <div class="col-md-6">
                         <ul class="visible-md visible-lg text-left">
                             <li><a href="tel:+32499914473"><i class="fa fa-phone"></i> +32 499 91 44 73</a></li>
-                            <li><a href="mailto:contact@surfsidemedia.in"><i class="fa fa-envelope"></i>
-                                    contact@surfsidemedia.in</a></li>
+                            <li><a href="mailto:contact@homes-services.com"><i class="fa fa-envelope"></i>
+                                    contact@homes-services.com</a></li>
                         </ul>
                         <ul class="visible-xs visible-sm">
                             <li class="text-left"><a href="tel:+32499914473"><i class="fa fa-phone"></i>
@@ -98,15 +98,7 @@
                             <li><a href="service-details/mattress-shampooing.html">Mattress Shampooing </a></li>
                             <li><a href="service-details/kitchen-deep-cleaning.html">Kitchen Deep Cleaning </a></li>
                         </ul>
-                    </li>
-                    <li> <a href="#">Special Services</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="servicesbycategory/16.html">Document Services</a></li>
-                            <li><a href="servicesbycategory/15.html">Cars &amp; Bikes</a></li>
-                            <li><a href="servicesbycategory/17.html">Movers &amp; Packers </a></li>
-                            <li><a href="servicesbycategory/18.html">Home Automation</a></li>
-                        </ul>
-                    </li>
+                    </li>                    
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->utype === 'ADM')
@@ -160,7 +152,7 @@
                 <div class="container">
                     <div class="row visible-md visible-lg">
                         <div class="col-md-3 col-xs-6 col-sm-6">
-                            <h3>APPLIANCE SERVICES </h3>
+                            <h3>APPAREILS MÉNAGERS </h3>
                             <ul>
                                 <li><i class="fa fa-check"></i> <a href="servicesbycategory/12.html">TV</a></li>
                                 <li><i class="fa fa-check"></i> <a href="servicesbycategory/14.html">Geyser</a></li>
@@ -174,7 +166,7 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-xs-6 col-sm-6">
-                            <h3>AC SERVICES </h3>
+                            <h3>SERVICES DE CLIMATISATION </h3>
                             <ul>
                                 <li><i class="fa fa-check"></i> <a
                                         href="service-details/ac-installation.html">Installation</a></li>
@@ -192,7 +184,7 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-xs-6 col-sm-6">
-                            <h3>HOME NEEDS </h3>
+                            <h3>ENTRETIENT MAISON </h3>
                             <ul>
                                 <li><i class="fa fa-check"></i> <a href="servicesbycategory/19.html">Laundry </a></li>
                                 <li><i class="fa fa-check"></i> <a href="servicesbycategory/4.html">Electrical</a></li>
@@ -203,50 +195,50 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-xs-6 col-sm-6">
-                            <h3>CONTACT US</h3>
+                            <h3>CONTACT</h3>
                             <ul class="contact_footer">
                                 <li class="location">
-                                    <i class="fa fa-map-marker"></i> <a href="#"> Faridabad, Haryana, India</a>
+                                    <i class="fa fa-map-marker"></i> <a href="#">Lomé, Togo</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i> <a
-                                        href="mailto:contact@surfsidemedia.in">contact@surfsidemedia.in</a>
+                                        href="mailto:contact@homes-services.com">contact@homes-services.com</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-headphones"></i> <a href="tel:+32499914473">+32 499 91 44 73</a>
+                                    <i class="fa fa-phone"></i> <a href="tel:+32499914473">+32 499 91 44 73</a>
                                 </li>
                             </ul>
                             <h3 style="margin-top: 10px">SUIVEZ-NOUS</h3>
                             <ul class="social">
-                                <li class="facebook"><span><i class="fa fa-facebook"></i></span><a href="#"></a>
-                                </li>
+                                <li class="facebook"><span><i class="fa fa-facebook"></i></span><a href="#"></a></li>
                                 <li class="twitter"><span><i class="fa fa-twitter"></i></span><a href="#"></a></li>
-                                <li class="github"><span><i class="fa fa-instagram"></i></span><a href="#"></a>
-                                </li>
+                                <li class="github"><span><i class="fa fa-instagram"></i></span><a href="#"></a></li>
+                                <li class="youtube"><span><i class="fa fa-youtube"></i></span><a href="#"></a></li>
+                                <li class="tiktok"><span><i class="fa fa-tiktok"></i></span><a href="#"></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="row visible-sm visible-xs">
                         <div class="col-md-6">
-                            <h3 class="mlist-h">CONTACT US</h3>
+                            <h3 class="mlist-h">CONTACT</h3>
                             <ul class="contact_footer mlist">
                                 <li class="location">
-                                    <i class="fa fa-map-marker"></i> <a href="#"> Faridabad, Haryana, India</a>
+                                    <i class="fa fa-map-marker"></i> <a href="#"> Lomé, Togo</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i> <a
-                                        href="mailto:contact@surfsidemedia.in">contact@surfsidemedia.in</a>
+                                        href="mailto:contact@homes-services.com">contact@homes-services.com</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-phone"></i> <a href="tel:+32499914473">+32 499 91 44 73</a>
                                 </li>
                             </ul>
                             <ul class="social mlist-h">
-                                <li class="facebook"><span><i class="fa fa-facebook"></i></span><a href="#"></a>
-                                </li>
+                                <li class="facebook"><span><i class="fa fa-facebook"></i></span><a href="#"></a></li>
                                 <li class="twitter"><span><i class="fa fa-twitter"></i></span><a href="#"></a></li>
-                                <li class="github"><span><i class="fa fa-instagram"></i></span><a href="#"></a>
-                                </li>
+                                <li class="github"><span><i class="fa fa-instagram"></i></span><a href="#"></a></li>
+                                <li class="youtube"><span><i class="fa fa-youtube"></i></span><a href="#"></a></li>
+                                <li class="tiktok"><span><i class="fa fa-tiktok"></i></span><a href="#"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -256,15 +248,15 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ul class="nav-footer">
-                                    <li><a href="about-us.html">About Us</a> </li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
+                                    <li><a href="about-us.html">À propos</a> </li>
+                                    <li><a href="contact-us.html">Contact</a></li>
                                     <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                                    <li><a href="terms-of-use.html">Conditions d'utilisation</a></li>
                                     <li><a href="privacy.html">Privacy</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <p class="text-xs-center crtext">&copy; 2021 SurfsideMedia. All Rights Reserved.</p>
+                                <p class="text-xs-center crtext">&copy; 2024 LDN Service. Tous droits réservés.</p>
                             </div>
                         </div>
                     </div>

@@ -66,9 +66,10 @@
                                             @endif
 
                                             @if ($sprovider->service_location)
-                                                <p><b>Localisation du service : </b>{{ $sprovider->service_location }}</p>
+                                                <p><b>Emplacement du service : </b>{{ $sprovider->service_location }}</p>
                                             @endif
                                             
+                                            <a href="{{ route('sprovider.profile.edit') }}" class="btn btn-info pull-right">Modifier</a>
                                         </div>
                                     </div>
                                 </div>
