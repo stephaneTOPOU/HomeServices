@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SurfsideMedia - Online Service Provider for your House Needs</title>
+    <title>LDN - Fournisseur de services en ligne pour vos besoins domestiques</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,24 +29,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="visible-md visible-lg text-left">
-                            <li><a href="tel:+22892655030"><i class="fa fa-phone"></i> +228 92 65 50 30</a></li>
+                            <li><a href="tel:+32499914473"><i class="fa fa-phone"></i> +32 499 91 44 73</a></li>
                             <li><a href="mailto:contact@surfsidemedia.in"><i class="fa fa-envelope"></i>
                                     contact@surfsidemedia.in</a></li>
                         </ul>
                         <ul class="visible-xs visible-sm">
-                            <li class="text-left"><a href="tel:+22892655030"><i class="fa fa-phone"></i>
-                                    +228 92 65 50 30</a></li>
+                            <li class="text-left"><a href="tel:+32499914473"><i class="fa fa-phone"></i>
+                                    +32 499 91 44 73</a></li>
                             <li class="text-right"><a href="index.php/changelocation.html"><i
                                         class="fa fa-map-marker"></i> Faridabad, Haryana</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="visible-md visible-lg text-right">
-                            <li><i class="fa fa-comment"></i> Live Chat</li>
-                            <li><a href="index.php/changelocation.html"><i class="fa fa-map-marker"></i> Faridabad,
-                                    Haryana</a></li>
-                        </ul>
-                    </div>
+                    @livewire('location-component')
                 </div>
             </div>
         </div>
@@ -229,10 +223,10 @@
                                         href="mailto:contact@surfsidemedia.in">contact@surfsidemedia.in</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-headphones"></i> <a href="tel:+22892655030">+228 92 65 50 30</a>
+                                    <i class="fa fa-headphones"></i> <a href="tel:+32499914473">+32 499 91 44 73</a>
                                 </li>
                             </ul>
-                            <h3 style="margin-top: 10px">FOLLOW US</h3>
+                            <h3 style="margin-top: 10px">SUIVEZ-NOUS</h3>
                             <ul class="social">
                                 <li class="facebook"><span><i class="fa fa-facebook"></i></span><a href="#"></a>
                                 </li>
@@ -254,7 +248,7 @@
                                         href="mailto:contact@surfsidemedia.in">contact@surfsidemedia.in</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-phone"></i> <a href="tel:+22892655030">+228 92 65 50 30</a>
+                                    <i class="fa fa-phone"></i> <a href="tel:+32499914473">+32 499 91 44 73</a>
                                 </li>
                             </ul>
                             <ul class="social mlist-h">
