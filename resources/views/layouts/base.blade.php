@@ -248,11 +248,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ul class="nav-footer">
-                                    <li><a href="about-us.html">À propos</a> </li>
-                                    <li><a href="contact-us.html">Contact</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="terms-of-use.html">Conditions d'utilisation</a></li>
-                                    <li><a href="privacy.html">Privacy</a></li>
+                                    <li><a href="{{ route('about') }}">À propos</a> </li>
+                                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                                    <li><a href="{{ route('faq') }}">FAQ</a></li>
+                                    <li><a href="{{ route('cgu') }}">Conditions d'utilisation</a></li>
+                                    <li><a href="{{ route('privacy') }}">Privacy</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-6">

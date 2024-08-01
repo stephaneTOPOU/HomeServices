@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\SearchController;
+use App\Http\Livewire\AboutComponent;
 use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
 use App\Http\Livewire\Admin\AdminAddSliderComponent;
+use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditServiceComponent;
@@ -12,9 +14,13 @@ use App\Http\Livewire\Admin\AdminServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminServiceComponent;
 use App\Http\Livewire\Admin\AdminServicesByCategoryComponent;
 use App\Http\Livewire\Admin\AdminSliderComponent;
+use App\Http\Livewire\CGUComponent;
 use App\Http\Livewire\ChangeLocationComponent;
+use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
+use App\Http\Livewire\FaqComponent;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\PrivacyComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
 use App\Http\Livewire\ServiceDetailComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
@@ -50,6 +56,12 @@ Route::post('/search', [SearchController::class, 'search'])->name('search');
 
 Route::get('/change-location', ChangeLocationComponent::class)->name('home.change.location');
 
+Route::get('/contact', ContactComponent::class)->name('contact');
+Route::get('/about', AboutComponent::class)->name('about');
+Route::get('/cgu', CGUComponent::class)->name('cgu');
+Route::get('/faq', FaqComponent::class)->name('faq');
+Route::get('/privacy', PrivacyComponent::class)->name('privacy');
+
 
 //Pour les clients
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
@@ -78,4 +90,6 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/slider', AdminSliderComponent::class)->name('admin.slider');
     Route::get('/admin/slider/add', AdminAddSliderComponent::class)->name('admin.add_slider');
     Route::get('/admin/slider/edit/{slide_id}', AdminEditSliderComponent::class)->name('admin.edit_slider');
+
+    Route::get('/admin-contact', AdminContactComponent::class)->name('admin.contact');
 });
