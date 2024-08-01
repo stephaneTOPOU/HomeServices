@@ -49,7 +49,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Image</th>
-                                                <th>Name</th>
+                                                <th>Nom</th>
                                                 <th>Slug</th> 
                                                 <th>En vedette</th>                                       
                                                 <th>Action</th>                                        
