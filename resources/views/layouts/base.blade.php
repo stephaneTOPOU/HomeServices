@@ -109,6 +109,7 @@
                                         <li><a href="{{route('admin.service')}}">Les services</a></li>
                                         <li><a href="{{route('admin.slider')}}">Les sliders</a></li>
                                         <li><a href="{{route('admin.contact')}}">Les messages</a></li>
+                                        <li><a href="{{route('admin.sprovider')}}">Les fournisseurs</a></li>
                                         <li><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
                                         </li>

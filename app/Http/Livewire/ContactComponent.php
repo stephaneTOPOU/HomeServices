@@ -16,7 +16,7 @@ class ContactComponent extends Component
     {
         $this->validateOnly($fields,[
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'message' => 'required',
         ]);
@@ -26,7 +26,7 @@ class ContactComponent extends Component
     {
         $this->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'message' => 'required',
         ]);

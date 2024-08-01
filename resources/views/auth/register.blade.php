@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail
-                                        </label>
+                                    </label>
                                     <div class="col-md-6">
                                         <input id="email" type="email" class="form-control" name="email"
                                             value="" required="">
@@ -113,31 +113,37 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="phone" class="col-md-4 col-form-label text-md-right">Téléphone</label>
+                                    <label for="telefon"
+                                        class="col-md-4 col-form-label text-md-right">Téléphone</label>
                                     <div class="col-md-6">
-                                        <input id="phone" type="text" class="form-control" name="phone"
+                                        <input id="telefon" type="text" class="form-control" name="telefon"
                                             value="" required="" autofocus="">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Mot de passe</label>
-                                    <div class="col-md-6">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Mot de
+                                        passe</label>
+                                    <div class="col-md-6 eye">
                                         <input id="password" type="password" class="form-control" name="password"
                                             required="">
+                                        <i class="fa fa-eye"></i>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirmez le
+                                    <label for="password-confirm"
+                                        class="col-md-4 col-form-label text-md-right">Confirmez le
                                         mot de passe</label>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 eye2">
                                         <input id="password-confirm" type="password" class="form-control"
                                             name="password_confirmation" required="">
+                                        <i class="fa fa-eye"></i>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="registeras" class="col-md-4 col-form-label text-md-right">S'inscrire comme</label>
+                                    <label for="registeras" class="col-md-4 col-form-label text-md-right">S'inscrire
+                                        comme</label>
                                     <div class="col-md-6">
                                         <select name="registeras" id="registeras" class="form-control">
                                             <option value="">Choisir</option>
@@ -149,7 +155,8 @@
                                 <div class="form-group row mb-0">
                                     <div class="col-md-10">
                                         <span style="font-size: 14px;">Vous êtes déjà inscrit <a
-                                                href="{{ route('login') }}" title="Login">click here</a> to login</span>
+                                                href="{{ route('login') }}" title="Login">click here</a> to
+                                            login</span>
                                         <button type="submit" class="btn btn-primary pull-right">S'inscrire</button>
                                     </div>
                                 </div>
@@ -172,3 +179,58 @@
         </div>
     </section>
 </x-base-layout>
+<style>
+    .eye i {
+        position: absolute !important;
+        top: 8px !important;
+        right: 25px !important;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .eye i.active::before {
+        content: '\f070';
+        color: #5256ad;
+    }
+
+    .eye2 i {
+        position: absolute !important;
+        top: 8px !important;
+        right: 25px !important;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .eye2 i.active::before {
+        content: '\f070';
+        color: #5256ad;
+    }
+</style>
+
+<script>
+    let input = document.querySelector('.eye input');
+    let showBtn = document.querySelector('.eye i');
+
+    showBtn.onclick = function() {
+        if (input.type === "password") {
+            input.type = "text";
+            showBtn.classList.add('active');
+        } else {
+            input.type = "password";
+            showBtn.classList.remove('active');
+        }
+    }
+
+    let input2 = document.querySelector('.eye2 input');
+    let showBtn2 = document.querySelector('.eye2 i');
+
+    showBtn2.onclick = function() {
+        if (input2.type === "password") {
+            input2.type = "text";
+            showBtn2.classList.add('active');
+        } else {
+            input2.type = "password";
+            showBtn2.classList.remove('active');
+        }
+    }
+</script>
