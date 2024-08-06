@@ -32,11 +32,11 @@
                     <div class="row">
                         <div class="col-md-4">
                             <aside>
-                                <h4>Le Bureau</h4>
+                                <h4>Notre Bureau</h4>
                                 <address>
-                                    <strong>LDN Services.</strong><br>
+                                    <strong>LDN Services</strong><br>
                                     <i class="fa fa-map-marker"></i><strong>Address: </strong>Lomé, Togo<br>
-                                    <i class="fa fa-phone"></i><strong>Phone: </strong> +92-499 91 44 73
+                                    <i class="fa fa-phone"></i><strong>Phone: </strong> +92 499 91 44 73
                                 </address>
                                 <address>
                                     <strong>LDN Service emails</strong><br>
