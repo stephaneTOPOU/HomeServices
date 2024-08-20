@@ -14,7 +14,7 @@
                 @endforeach
             </ul>
         </li>
-        <li> <a href="#">Home Needs</a>
+        <li> <a href="#">Besoins à domicile</a>
             <ul class="drop-down one-column hover-fade">
                 @foreach ($homes as $home)
                     <li><a href="{{ route('home.service.detail',['service_slug'=>$home->slug]) }}">{{ $home->name }}</a></li>
@@ -62,8 +62,8 @@
                     @csrf
                 </form>
             @else
-                <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a></li>
-                <li class="login-form"> <a href="{{ route('login') }}" title="Login">Login</a></li>
+                <li class="login-form"> <a href="{{ route('register') }}" title="Register">S'inscrire</a></li>
+                <li class="login-form"> <a href="{{ route('login') }}" title="Login">Connexion</a></li>
             @endif
             @endif
             <li class="search-bar">
