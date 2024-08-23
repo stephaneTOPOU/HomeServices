@@ -177,6 +177,14 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+
+
+        /* 
+        * artesaos/seotools Provider
+        */
+        
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+
     ],
 
     /*
@@ -231,6 +239,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+
+
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
 
     ],
 
