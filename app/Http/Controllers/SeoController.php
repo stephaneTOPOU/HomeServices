@@ -38,7 +38,7 @@ class SeoController extends Controller
         SEOMeta::setDescription($post->resume);
         SEOMeta::addMeta('service:published_time', $post->published_date->toW3CString(), 'property');
         SEOMeta::addMeta('service:section', $post->category, 'property');
-        SEOMeta::addKeyword(["ldn services", "ldn service", "LDN Services", "LDN Services", "ldn", "LDN", "services", "Services"]);
+        SEOMeta::addKeyword(["ldn services", "ldn service", "LDN Services", "LDN Services", "ldn", "LDN", "services", "Services", "Home service", "homes services"]);
 
         OpenGraph::setDescription($post->resume);
         OpenGraph::setTitle($post->title);

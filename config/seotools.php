@@ -13,7 +13,7 @@ return [
             'titleBefore'  => "LDN Service", // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
             'description'  => 'Bienvenu sur le site officiel ldn service, LDN est une plateforme numérique qui permet aux utilisateurs de trouver et de réserver des services pour leurs besoins domestiques.', // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => ["ldn services", "ldn service", "LDN Services", "LDN Services", "ldn", "LDN", "services", "Services"],
+            'keywords'     => ["ldn services", "ldn service", "LDN Services", "LDN Services", "ldn", "LDN", "services", "Services", "Home service", "homes services"],
             'canonical'    => "https://www.homes-services.com/", // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'robots'       => "https://www.homes-services.com/robots.txt", // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],

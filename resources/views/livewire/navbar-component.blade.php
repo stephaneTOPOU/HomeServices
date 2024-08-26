@@ -4,7 +4,7 @@
 
     <ul class="collapse">
         <li class="title">
-            <a href="/"><img src="{{ asset('images/logo.png') }}"></a>
+            <a href="/"><img src="{{ asset('images/logo.png') }}" alt="LDN Service"></a>
         </li>
         <li> <a href="{{ route('service.categories') }}">Catégories des services</a></li>
         <li> <a href="#">Appareils Ménagers</a>
