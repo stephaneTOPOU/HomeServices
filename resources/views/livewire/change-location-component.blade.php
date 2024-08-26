@@ -16,7 +16,7 @@
     </div>
     <div class="content-central">
         <div class="semiboxshadow text-center">
-            <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+            <img src="{{ asset('assets/img/img-theme/shp.png') }}" class="img-responsive" alt="LDN Services">
         </div>
         <div class="content_info">
             <div class="paddings-mini">
@@ -37,7 +37,7 @@
                             <div class="col-md-4">
                                 <aside class="addlocation">
                                     <h4>Votre localisation<input type="submit" class="btn btn-primary pull-right"
-                                            name="submit" value="Add Location"></h4>
+                                            name="submit" value="Ajouter une localisation"></h4>
                                     <address>
                                         <div class="form-group">
                                             <label for="streetnumber" class="col-form-label">Numéro de rue:</label>

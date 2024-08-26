@@ -45,9 +45,9 @@
                                                 <div class="content-btn"><a href="{{route('home.service.detail',['service_slug'=>$service->slug])}}"
                                                         class="btn btn-primary">Réserver</a>
                                                 </div>
-                                                <div class="price"><span>FCFA</span><b>À partir
+                                                {{-- <div class="price"><span>FCFA</span><b>À partir
                                                         de</b>{{ $service->price }}
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </a>
                                     </div>

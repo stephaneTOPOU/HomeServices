@@ -16,7 +16,7 @@
     </div>
     <div class="content-central">
         <div class="semiboxshadow text-center">
-            <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+            <img src="{{ asset('assets/img/img-theme/shp.png') }}" class="img-responsive" alt="LDN Services">
         </div>
         <div id="map" class="honmob">
             <iframe
@@ -35,11 +35,11 @@
                                 <h4>Notre Bureau</h4>
                                 <address>
                                     <strong>LDN Services</strong><br>
-                                    <i class="fa fa-map-marker"></i><strong>Address: </strong>Lomé, Togo<br>
-                                    <i class="fa fa-phone"></i><strong>Phone: </strong> +92 499 91 44 73
+                                    <i class="fa fa-map-marker"></i><strong>Adresss: </strong>Lomé, Togo<br>
+                                    <i class="fa fa-phone"></i><strong>Téléphone: </strong> +32 499 91 44 73
                                 </address>
                                 <address>
-                                    <strong>LDN Service emails</strong><br>
+                                    <strong>LDN Services emails</strong><br>
                                     <i class="fa fa-envelope"></i><strong>Email:</strong><a
                                         href="mailto:contact@homes-services.com"> contact@homes-services.com</a><br>
                                     <i class="fa fa-envelope"></i><strong>Email:</strong><a
@@ -49,7 +49,7 @@
                             <hr class="tall">
                         </div>
                         <div class="col-md-8">
-                            <h3>Formulaire de contact</h3>
+                            <h3>Laisser un message</h3>
                             <p class="lead">
                             </p>
                             @if (Session::has('message'))

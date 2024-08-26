@@ -15,14 +15,14 @@
         </div>
         <div class="filter-title">
             <div class="title-header">
-                <h2 style="color:#fff;">BOOK A SERVICE</h2>
-                <p class="lead">Book a service at very affordable price, </p>
+                <h2 style="color:#fff;">RÉSERVER UN SERVICE</h2>
+                <p class="lead">Réservez un service à un prix très abordable, </p>
             </div>
             <div class="filter-header">
                 <form id="sform" action="{{ route('search') }}" method="post">
                     @csrf
                     <input type="text" id="q" name="q" required="required"
-                        placeholder="What Services do you want?" class="input-large typeahead" autocomplete="off">
+                        placeholder="Quels services souhaitez-vous ?" class="input-large typeahead" autocomplete="off">
                     <input type="submit" name="submit" value="Trouver">
                 </form>
             </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="semiboxshadow text-center">
-            <img src="{{ asset('assets/img/img-theme/shp.png') }}" class="img-responsive" alt="">
+            <img src="{{ asset('assets/img/img-theme/shp.png') }}" class="img-responsive" alt="LDN Services">
         </div>
         <div class="content_info">
             <div>
@@ -81,7 +81,7 @@
                                         <div class="content-btn"><a
                                                 href="{{ route('home.service.detail', ['service_slug' => $fservice->slug]) }}"
                                                 class="btn btn-primary">Réserver</a></div>
-                                        <div class="price"><span>FCFA</span><b>pour</b>{{ $fservice->price }}</div>
+                                        {{-- <div class="price"><span>FCFA</span><b>pour</b>{{ $fservice->price }}</div> --}}
                                     </div>
                                 </a>
                             </div>
@@ -151,7 +151,7 @@
                                 <div class="content-btn"><a
                                         href="{{ route('home.service.detail', ['service_slug' => $aservice->slug]) }}"
                                         class="btn btn-primary">Réservez</a></div>
-                                <div class="price"><span>FCFA</span><b>pour</b>{{ $aservice->price }}</div>
+                                {{-- <div class="price"><span>FCFA</span><b>pour</b>{{ $aservice->price }}</div> --}}
                             </div>
                         </a>
                     </div>

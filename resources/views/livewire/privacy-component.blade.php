@@ -3,12 +3,12 @@
         <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
-                <h1>Privacy Policy</h1>
+                <h1>Politique de confidentialité</h1>
                 <div class="crumbs">
                     <ul>
                         <li><a href="{{ route('home') }}">Acceuil</a></li>
                         <li>/</li>
-                        <li>Privacy Policy</li>
+                        <li>Politique de confidentialité</li>
                     </ul>
                 </div>
             </div>
@@ -16,7 +16,7 @@
     </div>
     <section class="content-central">
         <div class="semiboxshadow text-center">
-            <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+            <img src="{{ asset('assets/img/img-theme/shp.png') }}" class="img-responsive" alt="LDN Services">
         </div>
         <div class="content_info">
             <div class="container">
@@ -32,57 +32,136 @@
                 <div class="row padding-bottom">
                     <div class="col-md-12">
                         <div class="accrodation">
-                            <span class="acc-trigger"><a href="#">Personal Information</a></span>
+                            <span class="acc-trigger"><a href="#">Informations personnelles</a></span>
                             <div class="acc-container">
                                 <div class="content ptext">
-                                    <p>User hereinafter referred to as ("You"). hereinafter referred to as
-                                        ("SurfsideMedia"). SurfsideMedia is owner and operator of
-                                        www.dshnavimumbai.com ("the Website"), collectively, including all content
-                                        provided by SurfsideMedia through the SurfsideMedia, the Website
-                                        "SurfsideMedia Service"</p>
-                                    <p>You have right not to supply personally identifiable information. If You
-                                        intend to view this SurfsideMedia Service and/or or share your data with the
-                                        SurfsideMedia Service, it is solely at your own volition, risk and after
-                                        reading and confirming it to this Privacy Policy.</p>
-                                    <p>At the time of using the SurfsideMedia Service you will share certain
-                                        Personal Information with SurfsideMedia, SurfsideMedia respects your
-                                        Personal Information. Such Personal Information may include your personal
-                                        identifiable information such as your name, address, mobile number, your
-                                        e-mail ids, your age, IP address, payment details and any other personal
-                                        information which You may share in connection with the services.</p>
-                                    <p>When you use SurfsideMedia’s Service through SurfsideMedia App, SurfsideMedia
-                                        may use Your mobile device’s ID (the unique identification assigned to a
-                                        mobile device by the manufacturer). SurfsideMedia does this to store your
-                                        preferences and track your use of SurfsideMedia App. You understand and
-                                        agree that SurfsideMedia has every right to share such ID with third parties
-                                        for its promotions, analysis, etc.</p>
-                                    <p>In case You participate in any other schemes, facilities, services provided
-                                        by the SurfsideMedia Service, You will be required to provide additional
-                                        information. Such information will also remain in SurfsideMedia’s database
-                                        and will be considered as your Personal Information and will be treated as
-                                        confidential.</p>
+                                    <p>
+                                        Nous attachons une grande importance à la protection de vos informations
+                                        personnelles. Cette Politique de Confidentialité décrit comment nous collectons,
+                                        utilisons, partageons et protégeons vos données lorsque vous utilisez notre
+                                        plateforme. En accédant à nos services, vous acceptez les pratiques décrites
+                                        dans cette politique.
+                                    <ol>
+                                        <li>
+                                            <b>Collecte des Informations</b><br />
+                                            Nous collectons différents types d'informations, notamment : <br />
+                                            <ul>
+                                                <li> <b>Informations personnelles : </b>Lorsque vous créez un compte,
+                                                    réservez un service ou interagissez avec notre plateforme, nous
+                                                    pouvons collecter des informations personnelles telles que votre
+                                                    nom, adresse, numéro de téléphone, adresse email, et informations de
+                                                    paiement.</li>
+                                                <li> <b>Informations non personnelles : </b>Nous pouvons également
+                                                    collecter des données non identifiables personnellement, telles que
+                                                    des informations sur votre appareil, votre navigateur, et votre
+                                                    activité sur notre site.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                    </p>
                                 </div>
                             </div>
-                            <span class="acc-trigger active"><a href="#">Protection of Information and
-                                    Storage</a></span>
+                            <span class="acc-trigger active"><a href="#">Protection de l'information et
+                                    Stockage</a></span>
                             <div class="acc-container">
                                 <div class="content ptext">
-                                    <p>SurfsideMedia needs to caution You that the SurfsideMedia Service could be
-                                        vulnerable to hacking, virus attacks and your personal data may be at risk.
-                                        SurfsideMedia takes all the necessary and reasonable caution to protect the
-                                        SurfsideMedia Service and data.</p>
+                                    <p>
+                                    <ol>
+                                        <li>
+                                            <b>Utilisation des Informations</b><br />
+                                            <ul>
+                                                <li><b>Fournir et gérer nos services : </b>Traiter vos réservations,
+                                                    gérer votre compte, et répondre à vos demandes.</li>
+                                                <li><b>Communications : </b>Vous envoyer des notifications concernant
+                                                    vos réservations, des mises à jour, des offres promotionnelles et
+                                                    des informations importantes sur notre plateforme.</li>
+                                                <li><b>Amélioration des services : </b>Analyser les données pour
+                                                    améliorer l'expérience utilisateur, développer de nouvelles
+                                                    fonctionnalités, et résoudre les problèmes techniques.</li>
+                                                <li><b>Conformité légale : </b>Respecter les lois applicables et
+                                                    répondre aux demandes des autorités compétentes.</li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <b>Partage des Informations</b><br />
+                                            Vos informations peuvent être partagées avec : <br />
+                                            <ul>
+                                                <li><b>Prestataires de services</b> pour faciliter vos réservations et
+                                                    l’exécution des services.</li>
+                                                <li><b>Fournisseurs tiers</b> qui aident à gérer les paiements,
+                                                    l'analyse des données, et le marketing.</li>
+                                                <li><b>Autorités légales</b> lorsque cela est requis par la loi ou pour
+                                                    protéger nos droits.</li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <b>Sécurité des Informations</b><br />Nous mettons en œuvre des mesures de
+                                            sécurité pour protéger vos informations contre l'accès non autorisé, la
+                                            divulgation, la modification ou la destruction. Cependant, aucune méthode de
+                                            transmission sur Internet ou de stockage électronique n'est 100 % sécurisée,
+                                            et nous ne pouvons garantir une sécurité absolue.
+                                        </li>
+
+                                        <li>
+                                            <b>Conservation des Informations</b><br />Nous conservons vos informations
+                                            personnelles aussi longtemps que nécessaire pour atteindre les objectifs
+                                            décrits dans cette politique, ou pour respecter nos obligations légales.
+                                        </li>
+                                    </ol>
+
+                                    <li>
+                                        <b>Droits des Utilisateurs</b><br />
+                                        Conformément aux lois applicables, vous avez des droits concernant vos
+                                        informations personnelles, notamment : <br />
+
+                                        <ul>
+                                            <li><b>Accès :</b> Demander l'accès à vos données personnelles que nous
+                                                détenons.</li>
+                                            <li><b>Rectification :</b> Demander la correction de vos données
+                                                personnelles inexactes.</li>
+                                            <li><b>Suppression :</b> Demander la suppression de vos informations
+                                                personnelles, sous réserve de certaines exceptions.</li>
+                                            <li><b>Opposition :</b> Vous opposer à certaines utilisations de vos
+                                                données, notamment à des fins de marketing.</li>
+                                        </ul>
+                                    </li>
+                                    Pour exercer vos droits, veuillez nous contacter via notre page de contact.
+
+                                    <li>
+                                        <b>Modifications de la Politique de Confidentialité</b><br />Nous nous réservons
+                                        le droit de modifier cette Politique de Confidentialité à tout moment. Toute
+                                        modification sera publiée sur cette page et, si nécessaire, vous serez informé
+                                        par email ou par notification sur notre plateforme. Votre utilisation continue
+                                        de nos services après les modifications constitue votre acceptation de la
+                                        nouvelle politique.
+                                    </li>
+
+                                    <li>
+                                        <b>Contact</b><br />Pour toute question ou préoccupation concernant cette
+                                        Politique de Confidentialité, ou pour exercer vos droits, veuillez nous
+                                        contacter à l'adresse suivante : <a
+                                            href="contact@homes-services.com">contact@homes-services.com</a> ou via
+                                        notre page de contact.
+                                    </li>
+                                    Nous vous remercions de votre confiance et de votre utilisation de notre plateforme.
+                                    Votre vie privée est importante pour nous.
+                                    </p>
                                 </div>
                             </div>
                             <span class="acc-trigger"><a href="#">Cookies</a></span>
                             <div class="acc-container">
                                 <div class="content ptext">
-                                    <p>SurfsideMedia may place a text file called a "cookie" in the browser files of
-                                        your Mobile. The cookie itself does not contain Personal Information
-                                        although it will enable the SurfsideMedia Service to relate your use of the
-                                        SurfsideMedia Service to information that you have specifically and
-                                        knowingly provided to SurfsideMedia.</p>
-                                    <p>The Cookies enables SurfsideMedia to remember your choices and some data
-                                        field contents which you would be required to fill-in.</p>
+                                    <p>
+                                        Nous utilisons des cookies et d'autres technologies similaires pour :
+                                    <ul>
+                                        <li>Suivre votre activité sur notre site.</li>
+                                        <li>Personnaliser votre expérience en fonction de vos préférences.</li>
+                                        <li>Analyser le trafic et améliorer nos services. Vous pouvez gérer vos
+                                            préférences de cookies via votre navigateur.</li>
+                                    </ul>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -92,8 +171,8 @@
         </div>
         <div class="content_info">
             <div class="skin_base paddings-mini color-white text-center">
-                <h2>Need Help? Call our Expert 24 X 7 - +91-1234567890</h2>
+                <h2>Besoin d'aide ? Appelez notre expert +228 92 65 50 30</h2>
             </div>
-        </div>            
+        </div>
     </section>
 </div>

@@ -100,8 +100,8 @@
                         <li><a href="{{ route('about') }}">À propos</a> </li>
                         <li><a href="{{ route('contact') }}">Contact</a></li>
                         <li><a href="{{ route('faq') }}">FAQ</a></li>
-                        <li><a href="{{ route('cgu') }}">Conditions d'utilisation</a></li>
-                        <li><a href="{{ route('privacy') }}">Privacy</a></li>
+                        <li><a href="{{ route('cgu') }}">CGU</a></li>
+                        <li><a href="{{ route('privacy') }}">Politique de confidentialité</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">

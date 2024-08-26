@@ -6,7 +6,7 @@
                 <h1>{{ $services->name }}</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('home') }}">Acceuil</a></li>
                         <li>/</li>
                         <li>{{ $services->name }}</li>
                     </ul>
@@ -16,7 +16,7 @@
     </div>
     <section class="content-central">
         <div class="semiboxshadow text-center">
-            <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+            <img src="{{ asset('assets/img/img-theme/shp.png') }}" class="img-responsive" alt="LDN Services">
         </div>
         <div class="content_info">
             <div class="paddings-mini">
@@ -73,7 +73,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Détails de la réservation</div>
                                     <div class="panel-body">
-                                        <table class="table">
+                                        {{-- <table class="table">
                                             <tr>
                                                 <td style="border-top: none;">Prix</td>
                                                 <td style="border-top: none;"><span>FCFA</span>{{ $services->price }}
@@ -110,7 +110,7 @@
                                                 <td>Total</td>
                                                 <td><span>FCFA</span> {{ $total }}</td>
                                             </tr>
-                                        </table>
+                                        </table> --}}
                                     </div>
                                     <div class="panel-footer">
                                         <form>
@@ -140,7 +140,7 @@
                                                 <div class="content-btn"><a
                                                         href="{{ route('home.service.detail', ['service_slug' => $r_services->slug]) }}"
                                                         class="btn btn-warning">Voir les détails</a></div>
-                                                <div class="price"><span>FCFA</span><b>de</b>{{ $r_services->price }}
+                                                {{-- <div class="price"><span>FCFA</span><b>de</b>{{ $r_services->price }} --}}
                                                 </div>
                                             </div>
                                         </a>
