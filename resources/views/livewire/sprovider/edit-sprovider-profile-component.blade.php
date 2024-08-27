@@ -49,19 +49,42 @@
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="disponible"
-                                                                    id="availabilityCheckbox" value="1" wire:model="disponible">
-                                                                <p id="availabilityStatus">Je ne suis pas disponible</p>
+                                                                    id="availabilityCheckbox" value="1"
+                                                                    wire:model="disponible">
+                                                                @if ($disponible)
+                                                                    <p id="availabilityStatus">
+                                                                        <span id="statusDot"
+                                                                            style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></span>
+                                                                        <span id="statusText">Je suis
+                                                                            disponible</span>
+                                                                    </p>
+                                                                @else
+                                                                    <p id="availabilityStatus">
+                                                                        <span id="statusDot"
+                                                                            style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: red;"></span>
+                                                                        <span id="statusText">Je ne suis pas
+                                                                            disponible</span>
+                                                                    </p>
+                                                                @endif
+
                                                             </label>
                                                         </div>
                                                     </div>
                                                     <script>
-                                                        document.getElementById('availabilityCheckbox').addEventListener('change', function() {
-                                                            let status = document.getElementById('availabilityStatus');
-                                                            if (this.checked) {
-                                                                status.textContent = "Je suis disponible";
-                                                            } else {
-                                                                status.textContent = "Je ne suis pas disponible";
-                                                            }
+                                                        document.addEventListener('livewire:load', function() {
+                                                            Livewire.hook('element.updated', (el, component) => {
+                                                                var checkbox = document.getElementById('availabilityCheckbox');
+                                                                var statusDot = document.getElementById('statusDot');
+                                                                var statusText = document.getElementById('statusText');
+
+                                                                if (checkbox.checked) {
+                                                                    statusDot.style.backgroundColor = "green";
+                                                                    statusText.textContent = "Je suis disponible";
+                                                                } else {
+                                                                    statusDot.style.backgroundColor = "red";
+                                                                    statusText.textContent = "Je ne suis pas disponible";
+                                                                }
+                                                            });
                                                         });
                                                     </script>
                                                 </div>

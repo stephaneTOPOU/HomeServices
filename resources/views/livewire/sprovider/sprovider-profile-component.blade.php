@@ -74,7 +74,7 @@
                                             @endif
 
                                             @if ($sprovider->service_location)
-                                                <p><b>Emplacement du service : </b>{{ $sprovider->service_location }}
+                                                <p><b>Adresse : </b>{{ $sprovider->service_location }}
                                                 </p>
                                             @endif
 

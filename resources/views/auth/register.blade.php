@@ -155,8 +155,8 @@
                                 <div class="form-group row mb-0">
                                     <div class="col-md-10">
                                         <span style="font-size: 14px;">Vous êtes déjà inscrit <a
-                                                href="{{ route('login') }}" title="Login">click here</a> to
-                                            login</span>
+                                                href="{{ route('login') }}" title="Login">cliquez ici</a> pour
+                                                se connecter</span>
                                         <button type="submit" class="btn btn-primary pull-right">S'inscrire</button>
                                     </div>
                                 </div>

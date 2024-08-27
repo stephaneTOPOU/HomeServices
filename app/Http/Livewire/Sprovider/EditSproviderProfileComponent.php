@@ -21,7 +21,7 @@ class EditSproviderProfileComponent extends Component
     public $service_id;
     public $service_location;
     public $newimage;
-    public $disponible;
+    public $disponible = false;
 
     public function mount()
     {
