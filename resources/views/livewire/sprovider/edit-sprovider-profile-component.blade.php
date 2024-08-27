@@ -155,7 +155,7 @@
 
                                                 <div class="form-group">
                                                     <label for="service_location"
-                                                        class="control-label col-sm-4">L'emplacement du service :
+                                                        class="control-label col-sm-4">Adresse :
                                                     </label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control"
