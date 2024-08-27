@@ -43,11 +43,19 @@
                                             @endif
                                         </div>
                                         <div class="col-md-8">
+
                                             <h3>Nom : {{ Auth::user()->name }}</h3>
 
-                                            @if ($sprovider->about)
-                                                <p>{{ $sprovider->about }}</p>
-                                            @endif
+                                            <p>Disponible :  @if ($sprovider->disponible)
+                                                    <span id="statusDot"
+                                                        style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></span>
+                                                    <span id="statusText">Je suis disponible</span>
+                                                @else
+                                                    <span id="statusDot"
+                                                        style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: red;"></span>
+                                                    <span id="statusText">Je ne suis pas disponible</span>
+                                                @endif
+                                            </p>
 
                                             @if (Auth::user()->email)
                                                 <p><b>Emai : </b>{{ Auth::user()->email }}</p>
@@ -61,15 +69,31 @@
                                                 <p><b>Ville : </b>{{ $sprovider->city }}</p>
                                             @endif
 
-                                            @if ($sprovider->service_category_id)
-                                                <p><b>Catégorie du service : </b>{{ $sprovider->category->name }}</p>
+                                            @if ($sprovider->service_id)
+                                                <p><b>Service rendu : </b>{{ $sprovider->service->name }}</p>
                                             @endif
 
                                             @if ($sprovider->service_location)
-                                                <p><b>Emplacement du service : </b>{{ $sprovider->service_location }}</p>
+                                                <p><b>Emplacement du service : </b>{{ $sprovider->service_location }}
+                                                </p>
                                             @endif
-                                            
-                                            <a href="{{ route('sprovider.profile.edit') }}" class="btn btn-info pull-right">Modifier</a>
+
+
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            @if ($sprovider->about)
+                                                <p> <b>Description :</b> {{ $sprovider->about }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-md-6"></div>
+                                        <div class="col-md-6">
+                                            <a href="{{ route('sprovider.profile.edit') }}"
+                                                class="btn btn-info pull-right">Modifier</a>
                                         </div>
                                     </div>
                                 </div>

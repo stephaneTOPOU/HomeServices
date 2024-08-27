@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Sprovider;
 
+use App\Models\Service;
 use App\Models\ServiceCategory;
 use App\Models\ServiceProvider;
 use Carbon\Carbon;
@@ -17,9 +18,10 @@ class EditSproviderProfileComponent extends Component
     public $image;
     public $about;
     public $city;
-    public $service_category_id;
+    public $service_id;
     public $service_location;
     public $newimage;
+    public $disponible;
 
     public function mount()
     {
@@ -29,8 +31,9 @@ class EditSproviderProfileComponent extends Component
         $this->image = $sprofiles->image;
         $this->about = $sprofiles->about;
         $this->city = $sprofiles->city;
-        $this->service_category_id = $sprofiles->service_category_id;
+        $this->service_id = $sprofiles->service_id;
         $this->service_location = $sprofiles->service_location;
+        $this->disponible = $sprofiles->disponible;
     }
 
     public function updated($fields)
@@ -39,7 +42,7 @@ class EditSproviderProfileComponent extends Component
             'service_provider_id' => 'required',
             'about' => 'required',
             'city' => 'required',
-            'service_category_id' => 'required',
+            'service_id' => 'required',
             'service_location' => 'required',
         ]);
 
@@ -56,7 +59,7 @@ class EditSproviderProfileComponent extends Component
             'service_provider_id' => 'required',
             'about' => 'required',
             'city' => 'required',
-            'service_category_id' => 'required',
+            'service_id' => 'required',
             'service_location' => 'required',
         ]);
 
@@ -67,9 +70,15 @@ class EditSproviderProfileComponent extends Component
         }
         $sprofiles = ServiceProvider::where('user_id', Auth::user()->id)->first();
         
+        if ($this->disponible) {
+            $sprofiles->disponible = $this->disponible;
+        }else {
+            $sprofiles->disponible = 0;
+        }
+
         $sprofiles->about = $this->about;
         $sprofiles->city = $this->city;
-        $sprofiles->service_category_id = $this->service_category_id;
+        $sprofiles->service_id = $this->service_id;
         $sprofiles->service_location = $this->service_location;
 
         if ($this->newimage) {            
@@ -84,7 +93,7 @@ class EditSproviderProfileComponent extends Component
 
     public function render()
     {
-        $categories = ServiceCategory::all();
-        return view('livewire.sprovider.edit-sprovider-profile-component', ['categories' => $categories])->layout('layouts.base');
+        $services = Service::all();
+        return view('livewire.sprovider.edit-sprovider-profile-component', ['services' => $services])->layout('layouts.base');
     }
 }

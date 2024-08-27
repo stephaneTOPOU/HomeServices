@@ -27,7 +27,8 @@
                                             Modifier un profile
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="{{ route('sprovider.profile') }}" class="btn btn-info pull-right">Mon profil</a>
+                                            <a href="{{ route('sprovider.profile') }}"
+                                                class="btn btn-info pull-right">Mon profil</a>
                                         </div>
                                     </div>
                                 </div>
@@ -40,6 +41,31 @@
                                             @endif
                                             <form action="" class="form-horizontal"
                                                 wire:submit.prevent="updateProfile">
+                                                <div class="form-group">
+                                                    <label for="disponible" class="control-label col-sm-4">
+                                                        Disponibilité :
+                                                    </label>
+                                                    <div class="col-sm-8">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" name="disponible"
+                                                                    id="availabilityCheckbox" value="1" wire:model="disponible">
+                                                                <p id="availabilityStatus">Je ne suis pas disponible</p>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <script>
+                                                        document.getElementById('availabilityCheckbox').addEventListener('change', function() {
+                                                            let status = document.getElementById('availabilityStatus');
+                                                            if (this.checked) {
+                                                                status.textContent = "Je suis disponible";
+                                                            } else {
+                                                                status.textContent = "Je ne suis pas disponible";
+                                                            }
+                                                        });
+                                                    </script>
+                                                </div>
+
                                                 <div class="form-group">
                                                     <label for="newimage" class="control-label col-sm-4">Image :
                                                     </label>
@@ -86,19 +112,19 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="service_category_id"
-                                                        class="control-label col-sm-4">Catégorie du service : </label>
+                                                    <label for="service_id" class="control-label col-sm-4">Service :
+                                                    </label>
 
                                                     <div class="col-sm-8">
-                                                        <select name="service_category_id" id=""
-                                                            class="form-control" wire:model="service_category_id">
-                                                            <option value="">Choisir la categorie</option>
-                                                            @foreach ($categories as $category)
-                                                                <option value="{{ $category->id }}">
-                                                                    {{ $category->name }}</option>
+                                                        <select name="service_id" id="" class="form-control"
+                                                            wire:model="service_id">
+                                                            <option value="">Choisir le service</option>
+                                                            @foreach ($services as $service)
+                                                                <option value="{{ $service->id }}">
+                                                                    {{ $service->name }}</option>
                                                             @endforeach
                                                         </select>
-                                                        @error('service_category_id')
+                                                        @error('service_id')
                                                             <p class="text-danger">{{ $message }}</p>
                                                         @enderror
                                                     </div>
