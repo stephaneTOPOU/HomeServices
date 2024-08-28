@@ -93,7 +93,7 @@
                         <ul class="visible-xs visible-sm">
                             <li class="text-left"><a href="tel:+32499914473"><i class="fa fa-phone"></i>
                                     +32 499 91 44 73</a></li>
-                            <li class="text-right"><a href="index.php/changelocation.html"><i
+                            <li class="text-right"><a href="{{ route('home.change.location') }}"><i
                                         class="fa fa-map-marker"></i> Lomé, Togo</a></li>
                         </ul>
                     </div>
