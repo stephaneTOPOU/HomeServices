@@ -22,6 +22,8 @@ class EditSproviderProfileComponent extends Component
     public $service_location;
     public $newimage;
     public $disponible = false;
+    public $annee_experience;
+    public $nbre_mission;
 
     public function mount()
     {
@@ -34,6 +36,8 @@ class EditSproviderProfileComponent extends Component
         $this->service_id = $sprofiles->service_id;
         $this->service_location = $sprofiles->service_location;
         $this->disponible = $sprofiles->disponible;
+        $this->annee_experience = $sprofiles->annee_experience;
+        $this->nbre_mission = $sprofiles->nbre_mission;
     }
 
     public function updated($fields)
@@ -44,6 +48,8 @@ class EditSproviderProfileComponent extends Component
             'city' => 'required',
             'service_id' => 'required',
             'service_location' => 'required',
+            'annee_experience' => 'required',
+            'nbre_mission' => 'required',
         ]);
 
         if ($this->newimage) {
@@ -61,6 +67,8 @@ class EditSproviderProfileComponent extends Component
             'city' => 'required',
             'service_id' => 'required',
             'service_location' => 'required',
+            'annee_experience' => 'required',
+            'nbre_mission' => 'required',
         ]);
 
         if ($this->newimage) {
@@ -80,6 +88,8 @@ class EditSproviderProfileComponent extends Component
         $sprofiles->city = $this->city;
         $sprofiles->service_id = $this->service_id;
         $sprofiles->service_location = $this->service_location;
+        $sprofiles->annee_experience = $this->annee_experience;
+        $sprofiles->nbre_mission = $this->nbre_mission;
 
         if ($this->newimage) {            
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();

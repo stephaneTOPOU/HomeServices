@@ -90,6 +90,30 @@
                                                 </div>
 
                                                 <div class="form-group">
+                                                    <label for="annee_experience" class="control-label col-sm-4">
+                                                        <b>Année d'expérience : </b>
+                                                    </label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control" name="annee_experience" wire:model="annee_experience">
+                                                        @error('annee_experience')
+                                                            <p class="text-danger">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="nbre_mission" class="control-label col-sm-4">
+                                                        <b>Nombre de mission : </b>
+                                                    </label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control" name="nbre_mission" wire:model="nbre_mission">
+                                                        @error('nbre_mission')
+                                                            <p class="text-danger">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
                                                     <label for="newimage" class="control-label col-sm-4">Image :
                                                     </label>
                                                     <div class="col-sm-8">

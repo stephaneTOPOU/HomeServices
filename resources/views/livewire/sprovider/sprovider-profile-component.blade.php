@@ -44,40 +44,67 @@
                                         </div>
                                         <div class="col-md-8">
 
-                                            <h3>Nom : {{ Auth::user()->name }}</h3>
-
-                                            <p>Disponible :  @if ($sprovider->disponible)
-                                                    <span id="statusDot"
-                                                        style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></span>
-                                                    <span id="statusText">Je suis disponible</span>
-                                                @else
-                                                    <span id="statusDot"
-                                                        style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: red;"></span>
-                                                    <span id="statusText">Je ne suis pas disponible</span>
-                                                @endif
-                                            </p>
-
-                                            @if (Auth::user()->email)
-                                                <p><b>Emai : </b>{{ Auth::user()->email }}</p>
-                                            @endif
-
-                                            @if (Auth::user()->phone)
-                                                <p><b>Téléphone : </b>{{ Auth::user()->phone }}</p>
-                                            @endif
-
-                                            @if ($sprovider->city)
-                                                <p><b>Ville : </b>{{ $sprovider->city }}</p>
-                                            @endif
-
-                                            @if ($sprovider->service_id)
-                                                <p><b>Service rendu : </b>{{ $sprovider->service->name }}</p>
-                                            @endif
-
-                                            @if ($sprovider->service_location)
-                                                <p><b>Adresse : </b>{{ $sprovider->service_location }}
+                                            <div class="col-md-12">
+                                                <p><b>Disponible : </b>
+                                                    @if ($sprovider->disponible)
+                                                        <span id="statusDot"
+                                                            style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></span>
+                                                        <span id="statusText">Je suis disponible</span>
+                                                    @else
+                                                        <span id="statusDot"
+                                                            style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: red;"></span>
+                                                        <span id="statusText">Je ne suis pas disponible</span>
+                                                    @endif
                                                 </p>
-                                            @endif
+                                            </div>
 
+                                            <div class="col-md-6">
+                                                <h3>Nom : {{ Auth::user()->name }}</h3>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Prénom : {{ Auth::user()->firstname }}</h3>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                @if ($sprovider->annee_experience)
+                                                    <p><b>Année d'expérience : </b>{{ $sprovider->annee_experience }}
+                                                        an(s)</p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-6">
+                                                @if ($sprovider->nbre_mission)
+                                                    <p><b>Nombre de mission : </b>{{ $sprovider->nbre_mission }}</p>
+                                                @endif
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                @if (Auth::user()->phone)
+                                                    <p><b>Téléphone : </b>{{ Auth::user()->phone }}</p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-6">
+                                                @if (Auth::user()->email)
+                                                    <p><b>Emai : </b>{{ Auth::user()->email }}</p>
+                                                @endif
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                @if ($sprovider->city)
+                                                    <p><b>Ville : </b>{{ $sprovider->city }}</p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-6">
+                                                @if ($sprovider->service_location)
+                                                    <p><b>Adresse : </b>{{ $sprovider->service_location }}
+                                                    </p>
+                                                @endif
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                @if ($sprovider->service_id)
+                                                    <p><b>Service rendu : </b>{{ $sprovider->service->name }}</p>
+                                                @endif
+                                            </div>
 
                                         </div>
 
