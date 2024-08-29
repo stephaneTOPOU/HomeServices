@@ -32,10 +32,16 @@
                             @foreach ($sproviders as $sprovider)
                                 <div class="col-xs-6 col-sm-4 col-md-3 nature hsgrids"
                                     style="padding-right: 5px;padding-left: 5px;">
-                                    <a class="g-list" href="{{ route('home.service.detail',['service_slug'=>$sprovider->service->slug]) }}">
+                                    <a class="g-list"
+                                        href="{{ route('home.service.detail', ['service_slug' => $sprovider->service->slug]) }}">
                                         <div class="img-hover">
-                                            <img src="{{ asset('images/sprovider') }}/{{ $sprovider->image }}"
-                                                alt="{{ $sprovider->user->name }}" class="img-responsive">
+                                            @if ($sprovider->image)
+                                                <img src="{{ asset('images/sprovider') }}/{{ $sprovider->image }}"
+                                                    alt="{{ $sprovider->user->name }}" class="img-responsive">
+                                            @else
+                                                <img src="{{ asset('images/sprovider/default.png') }}"
+                                                    alt="{{ $sprovider->user->name }}" class="img-responsive">
+                                            @endif
                                         </div>
                                         <div class="info-gallery">
                                             @if ($sprovider->disponible)
@@ -50,7 +56,8 @@
                                             <h3>{{ $sprovider->user->name }} {{ $sprovider->user->firstname }}</h3>
                                             <hr class="separator">
                                             <p>{{ $sprovider->city }}, {{ $sprovider->service_location }}</p>
-                                            <div class="content-btn"><a href="{{ route('home.service.detail',['service_slug'=>$sprovider->service->slug]) }}"
+                                            <div class="content-btn"><a
+                                                    href="{{ route('home.service.detail', ['service_slug' => $sprovider->service->slug]) }}"
                                                     class="btn btn-primary">Detail</a>
                                             </div>
                                             <div class="price"></b>
