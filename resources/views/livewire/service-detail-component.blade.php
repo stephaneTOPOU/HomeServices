@@ -33,7 +33,8 @@
                                             </div>
                                             <div class="post-info-wrap">
                                                 <h2 class="post-title"><a href="#" title="Post Format: Standard"
-                                                        rel="bookmark">{{ $services->name }}: {{ $services->service_categories->name }}</a></h2>
+                                                        rel="bookmark">{{ $services->name }}:
+                                                        {{ $services->service_categories->name }}</a></h2>
                                                 <div class="post-meta" style="height: 10px;">
                                                 </div>
                                             </div>
@@ -73,44 +74,47 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Détails de la réservation</div>
                                     <div class="panel-body">
-                                        {{-- <table class="table">
-                                            <tr>
-                                                <td style="border-top: none;">Prix</td>
-                                                <td style="border-top: none;"><span>FCFA</span>{{ $services->price }}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Quntité</td>
-                                                <td>1</td>
-                                            </tr>
-                                            @php
-                                                $total = $services->price;
-                                            @endphp
-                                            @if ($services->discount)
-                                                @if ($services->discount_type == 'fixed')
-                                                    <tr>
-                                                        <td>Réduction</td>
-                                                        <td>{{ $services->discount }} F</td>
-                                                    </tr>
-                                                    @php
-                                                        $total = $total - $services->discount;
-                                                    @endphp
-                                                @elseif ($services->discount_type == 'percent')
-                                                    <tr>
-                                                        <td>Réduction</td>
-                                                        <td>{{ $services->discount }} %</td>
+                                        <table class="table">
+                                            @foreach ($sproviders as $sprovider)
+                                                <tr>
+                                                    <td style="border-top: none;">Prix</td>
+                                                    <td style="border-top: none;">
+                                                        <span>FCFA</span>{{ $sprovider->prix }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Quntité</td>
+                                                    <td>1</td>
+                                                </tr>
+                                                @php
+                                                    $total = $sprovider->prix;
+                                                @endphp
+                                                @if ($sprovider->sp_discount)
+                                                    @if ($sprovider->sp_discount_type == 'fixed')
+                                                        <tr>
+                                                            <td>Réduction</td>
+                                                            <td>{{ $sprovider->sp_discount }} F</td>
+                                                        </tr>
                                                         @php
-                                                            $total = $total - ($total * $services->discount) / 100;
+                                                            $total = $total - $sprovider->sp_discount;
                                                         @endphp
-                                                    </tr>
+                                                    @elseif ($sprovider->sp_discount_type == 'percent')
+                                                        <tr>
+                                                            <td>Réduction</td>
+                                                            <td>{{ $sprovider->sp_discount }} %</td>
+                                                            @php
+                                                                $total = $total - ($total * $sprovider->sp_discount) / 100;
+                                                            @endphp
+                                                        </tr>
+                                                    @endif
                                                 @endif
-                                            @endif
 
-                                            <tr>
-                                                <td>Total</td>
-                                                <td><span>FCFA</span> {{ $total }}</td>
-                                            </tr>
-                                        </table> --}}
+                                                <tr>
+                                                    <td>Total</td>
+                                                    <td><span>FCFA</span> {{ $total }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
                                     </div>
                                     <div class="panel-footer">
                                         <form>
@@ -126,7 +130,7 @@
                                     <div class="col-md-12 col-sm-6 col-xs-12 bg-dark color-white padding-top-mini"
                                         style="max-width: 360px">
                                         <a
-                                            href="{{ route('home.service.detail', ['service_slug' => $r_services->slug]) }}">
+                                            href="{{ route('home.service.sprovider', ['service_slug' => $r_services->slug]) }}">
                                             <div class="img-hover">
                                                 <img src="{{ asset('images/services/thumbnails') }}/{{ $r_services->thumbnail }}"
                                                     alt="{{ $r_services->name }}" class="img-responsive">
@@ -138,21 +142,20 @@
                                                 <hr class="separator">
                                                 <p>{{ $r_services->name }}</p>
                                                 <div class="content-btn"><a
-                                                        href="{{ route('home.service.detail', ['service_slug' => $r_services->slug]) }}"
+                                                        href="{{ route('home.service.sprovider', ['service_slug' => $r_services->slug]) }}"
                                                         class="btn btn-warning">Voir les détails</a></div>
                                                 {{-- <div class="price"><span>FCFA</span><b>de</b>{{ $r_services->price }} --}}
-                                                </div>
                                             </div>
-                                        </a>
                                     </div>
-                                @else
-                                
-                                @endif
-                            </aside>
+                                    </a>
                         </div>
+                    @else
+                        @endif
+                        </aside>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+</div>
+</section>
 </div>

@@ -8,7 +8,7 @@
                         <li>
                             <i class="fa fa-check"></i>
                             <a
-                                href="{{ route('home.service.detail', ['service_slug' => $app->slug]) }}">{{ $app->name }}
+                                href="{{ route('home.service.sprovider', ['service_slug' => $app->slug]) }}">{{ $app->name }}
                             </a>
                         </li>
                     @endforeach
@@ -21,7 +21,7 @@
                         <li>
                             <i class="fa fa-check"></i>
                             <a
-                                href="{{ route('home.service.detail', ['service_slug' => $clim->slug]) }}">{{ $clim->name }}
+                                href="{{ route('home.service.sprovider', ['service_slug' => $clim->slug]) }}">{{ $clim->name }}
                             </a>
                         </li>
                     @endforeach
@@ -33,7 +33,7 @@
                     @foreach ($footers as $footer)
                         <li><i class="fa fa-check"></i>
                             <a
-                                href="{{ route('home.service.detail', ['service_slug' => $footer->slug]) }}">{{ $footer->name }}
+                                href="{{ route('home.service.sprovider', ['service_slug' => $footer->slug]) }}">{{ $footer->name }}
                             </a>
                         </li>
                     @endforeach

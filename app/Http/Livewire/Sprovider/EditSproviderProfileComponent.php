@@ -24,6 +24,9 @@ class EditSproviderProfileComponent extends Component
     public $disponible = false;
     public $annee_experience;
     public $nbre_mission;
+    public $prix;
+    public $sp_discount;
+    public $sp_discount_type;
 
     public function mount()
     {
@@ -38,6 +41,9 @@ class EditSproviderProfileComponent extends Component
         $this->disponible = $sprofiles->disponible;
         $this->annee_experience = $sprofiles->annee_experience;
         $this->nbre_mission = $sprofiles->nbre_mission;
+        $this->prix = $sprofiles->prix;
+        $this->sp_discount = $sprofiles->sp_discount;
+        $this->sp_discount_type = $sprofiles->sp_discount_type;
     }
 
     public function updated($fields)
@@ -50,6 +56,7 @@ class EditSproviderProfileComponent extends Component
             'service_location' => 'required',
             'annee_experience' => 'required',
             'nbre_mission' => 'required',
+            'prix' => 'required',
         ]);
 
         if ($this->newimage) {
@@ -69,6 +76,7 @@ class EditSproviderProfileComponent extends Component
             'service_location' => 'required',
             'annee_experience' => 'required',
             'nbre_mission' => 'required',
+            'prix' => 'required',
         ]);
 
         if ($this->newimage) {
@@ -90,6 +98,9 @@ class EditSproviderProfileComponent extends Component
         $sprofiles->service_location = $this->service_location;
         $sprofiles->annee_experience = $this->annee_experience;
         $sprofiles->nbre_mission = $this->nbre_mission;
+        $sprofiles->prix = $this->prix;
+        $sprofiles->sp_discount = $this->sp_discount;
+        $sprofiles->sp_discount_type = $this->sp_discount_type;
 
         if ($this->newimage) {            
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();

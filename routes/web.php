@@ -28,6 +28,7 @@ use App\Http\Livewire\ServicesByCategoryComponent;
 use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use App\Http\Livewire\Sprovider\SproviderProfileComponent;
+use App\Http\Livewire\SproviderComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,7 +49,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeComponent::class)->name('home');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('service.categories');
 Route::get('/{category_slug}/service', ServicesByCategoryComponent::class)->name('home.service');
-Route::get('service/{service_slug}', ServiceDetailComponent::class)->name('home.service.detail');
+Route::get('/service/{service_slug}', SproviderComponent::class)->name('home.service.sprovider');
+Route::get('service/{service_slug}/details', ServiceDetailComponent::class)->name('home.service.detail');
+
 
 
 Route::get('/autocomplete', [SearchController::class, 'autoComplete'])->name('autocomplete');

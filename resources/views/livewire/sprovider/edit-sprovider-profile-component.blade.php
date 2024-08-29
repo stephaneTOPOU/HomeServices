@@ -94,7 +94,8 @@
                                                         <b>Année d'expérience : </b>
                                                     </label>
                                                     <div class="col-sm-8">
-                                                        <input type="number" class="form-control" name="annee_experience" wire:model="annee_experience">
+                                                        <input type="number" class="form-control"
+                                                            name="annee_experience" wire:model="annee_experience">
                                                         @error('annee_experience')
                                                             <p class="text-danger">{{ $message }}</p>
                                                         @enderror
@@ -106,7 +107,8 @@
                                                         <b>Nombre de mission : </b>
                                                     </label>
                                                     <div class="col-sm-8">
-                                                        <input type="number" class="form-control" name="nbre_mission" wire:model="nbre_mission">
+                                                        <input type="number" class="form-control" name="nbre_mission"
+                                                            wire:model="nbre_mission">
                                                         @error('nbre_mission')
                                                             <p class="text-danger">{{ $message }}</p>
                                                         @enderror
@@ -172,6 +174,43 @@
                                                             @endforeach
                                                         </select>
                                                         @error('service_id')
+                                                            <p class="text-danger">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="prix" class="control-label col-sm-4">Prix de votre
+                                                        service :
+                                                    </label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control"
+                                                            name="prix" wire:model="prix">
+                                                        @error('prix')
+                                                            <p class="text-danger">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="sp_discount" class="control-label col-sm-4">Réduction : </label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" name="sp_discount" wire:model="sp_discount" />
+                                                        @error('sp_discount')
+                                                            <p class="text-danger">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+        
+                                                <div class="form-group">
+                                                    <label for="sp_discount_type" class="control-label col-sm-4">Type de réduction : </label>
+                                                    <div class="col-sm-8">
+                                                        <select name="sp_discount_type" id="" class="form-control" wire:model="sp_discount_type">
+                                                            <option value="">choisir</option>
+                                                            <option value="fixed">Fixe</option>
+                                                            <option value="percent">Pourcentage</option>
+                                                        </select>
+                                                        @error('sp_discount_type')
                                                             <p class="text-danger">{{ $message }}</p>
                                                         @enderror
                                                     </div>

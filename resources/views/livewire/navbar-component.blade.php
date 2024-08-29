@@ -10,14 +10,14 @@
         <li> <a href="#">Appareils Ménagers</a>
             <ul class="drop-down one-column hover-fade">
                 @foreach ($appliances as $appliance)
-                    <li><a href="{{ route('home.service.detail',['service_slug'=>$appliance->slug]) }}">{{ $appliance->name }}</a></li>
+                    <li><a href="{{ route('home.service.sprovider',['service_slug'=>$appliance->slug]) }}">{{ $appliance->name }}</a></li>
                 @endforeach
             </ul>
         </li>
         <li> <a href="#">Besoins à domicile</a>
             <ul class="drop-down one-column hover-fade">
                 @foreach ($homes as $home)
-                    <li><a href="{{ route('home.service.detail',['service_slug'=>$home->slug]) }}">{{ $home->name }}</a></li>
+                    <li><a href="{{ route('home.service.sprovider',['service_slug'=>$home->slug]) }}">{{ $home->name }}</a></li>
                 @endforeach
             </ul>
         </li>        

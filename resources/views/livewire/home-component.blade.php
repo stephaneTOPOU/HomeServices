@@ -69,7 +69,7 @@
                             <div class="col-xs-6 col-sm-4 col-md-3 hsgrids"
                                 style="padding-right: 5px;padding-left: 5px;">
                                 <a class="g-list"
-                                    href="{{ route('home.service.detail', ['service_slug' => $fservice->slug]) }}">
+                                    href="{{ route('home.service.sprovider', ['service_slug' => $fservice->slug]) }}">
                                     <div class="img-hover">
                                         <img src="{{ asset('images/services/thumbnails') }}/{{ $fservice->thumbnail }}"
                                             alt="{{ $fservice->non }}" class="img-responsive">
@@ -79,7 +79,7 @@
                                         <hr class="separator">
                                         <p>{{ $fservice->tagline }}</p>
                                         <div class="content-btn"><a
-                                                href="{{ route('home.service.detail', ['service_slug' => $fservice->slug]) }}"
+                                                href="{{ route('home.service.sprovider', ['service_slug' => $fservice->slug]) }}"
                                                 class="btn btn-primary">Réserver</a></div>
                                         {{-- <div class="price"><span>FCFA</span><b>pour</b>{{ $fservice->price }}</div> --}}
                                     </div>
@@ -138,7 +138,7 @@
             <div id="boxes-carousel">
                 @foreach ($aservices as $aservice)
                     <div>
-                        <a class="g-list" href="{{ route('home.service.detail', ['service_slug' => $aservice->slug]) }}">
+                        <a class="g-list" href="{{ route('home.service.sprovider', ['service_slug' => $aservice->slug]) }}">
                             <div class="img-hover">
                                 <img src="{{ asset('images/services/thumbnails') }}/{{ $aservice->thumbnail }}"
                                     alt="{{ $aservice->name }}" class="img-responsive">
@@ -149,7 +149,7 @@
                                 <hr class="separator">
                                 <p>{{ $aservice->tagline }}</p>
                                 <div class="content-btn"><a
-                                        href="{{ route('home.service.detail', ['service_slug' => $aservice->slug]) }}"
+                                        href="{{ route('home.service.sprovider', ['service_slug' => $aservice->slug]) }}"
                                         class="btn btn-primary">Réservez</a></div>
                                 {{-- <div class="price"><span>FCFA</span><b>pour</b>{{ $aservice->price }}</div> --}}
                             </div>

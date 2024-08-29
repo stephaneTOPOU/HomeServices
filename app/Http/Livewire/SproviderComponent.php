@@ -6,7 +6,7 @@ use App\Models\Service;
 use App\Models\ServiceProvider;
 use Livewire\Component;
 
-class ServiceDetailComponent extends Component
+class SproviderComponent extends Component
 {
     public $service_slug;
 
@@ -17,12 +17,10 @@ class ServiceDetailComponent extends Component
 
     public function render()
     {
-        $services = Service::where('slug', $this->service_slug)->first();
-        $r_services = Service::where('service_category_id', $services->service_category_id)->where('slug', '!=', $this->service_slug)->inRandomOrder()->first();
-
         $service_id = Service::where('slug', $this->service_slug)->select('id')->first();
+        // dd($service_id);
+        $services = Service::where('slug', $this->service_slug)->first();
         $sproviders = ServiceProvider::where('service_id',$service_id->id)->get();
-
-        return view('livewire.service-detail-component', ['services'=>$services, 'r_services'=>$r_services, 'sproviders'=>$sproviders])->layout('layouts.base');
+        return view('livewire.sprovider-component', ['sproviders'=>$sproviders, 'services'=>$services])->layout('layouts.base');
     }
 }
