@@ -31,6 +31,6 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Confirmation des réservation')->view('mails.order-mail');
+        return $this->subject('Confirmation de la réservation')->view('mails.order-mail');
     }
 }

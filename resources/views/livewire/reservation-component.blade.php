@@ -284,7 +284,7 @@
                                                 <div wire:ignore id="traitement"
                                                     style="font-size: 22px; margin-bottom: 20px; padding-left: 37px; color: green; display: none">
                                                     <i class="fa fa-spinner fa-pulse fa-fw"></i>
-                                                    <span>Traitement...</span>
+                                                    <span>Traitement encours...</span>
                                                 </div>
                                             @endif
                                         </div>
