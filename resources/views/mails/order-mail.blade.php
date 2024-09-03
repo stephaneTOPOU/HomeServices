@@ -24,7 +24,7 @@
         <tbody>
             @foreach ($order->orderItems as $item)
                 <tr>
-                    <td><img src="{{ asset('assets/services/thumbnails') }}/{{ $item->service->image }}" width="100"
+                    <td><img src="{{ asset('assets/services') }}/{{ $item->service->image }}" width="100"
                             alt="{{ $item->service->name }}"></td>
                     <td>{{ $item->service->name }}</td>                    
                     <td>{{ $item->price }} FCFA</td>
