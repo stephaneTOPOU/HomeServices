@@ -75,52 +75,50 @@
                                     <div class="panel-heading">Détails de la réservation</div>
                                     <div class="panel-body">
                                         <table class="table">
-                                            @foreach ($sproviders as $sprovider)
-                                                <tr>
-                                                    <td style="border-top: none;">Prix</td>
-                                                    <td style="border-top: none;">
-                                                        <span>FCFA</span>{{ $sprovider->prix }}
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Quntité</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                @php
-                                                    $total = $sprovider->prix;
-                                                @endphp
-                                                @if ($sprovider->sp_discount)
-                                                    @if ($sprovider->sp_discount_type == 'fixed')
-                                                        <tr>
-                                                            <td>Réduction</td>
-                                                            <td>{{ $sprovider->sp_discount }} F</td>
-                                                        </tr>
+                                            <tr>
+                                                <td style="border-top: none;">Prix</td>
+                                                <td style="border-top: none;">
+                                                    <span>&euro;</span>{{ $services->price }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quntité</td>
+                                                <td>1</td>
+                                            </tr>
+                                            @php
+                                                $total = $services->price;
+                                            @endphp
+                                            @if ($services->sp_discount)
+                                                @if ($services->sp_discount_type == 'fixed')
+                                                    <tr>
+                                                        <td>Réduction</td>
+                                                        <td>{{ $services->sp_discount }} F</td>
+                                                    </tr>
+                                                    @php
+                                                        $total = $total - $services->sp_discount;
+                                                    @endphp
+                                                @elseif ($services->sp_discount_type == 'percent')
+                                                    <tr>
+                                                        <td>Réduction</td>
+                                                        <td>{{ $services->sp_discount }} %</td>
                                                         @php
-                                                            $total = $total - $sprovider->sp_discount;
+                                                            $total = $total - ($total * $services->sp_discount) / 100;
                                                         @endphp
-                                                    @elseif ($sprovider->sp_discount_type == 'percent')
-                                                        <tr>
-                                                            <td>Réduction</td>
-                                                            <td>{{ $sprovider->sp_discount }} %</td>
-                                                            @php
-                                                                $total = $total - ($total * $sprovider->sp_discount) / 100;
-                                                            @endphp
-                                                        </tr>
-                                                    @endif
+                                                    </tr>
                                                 @endif
+                                            @endif
+                                            <tr>
+                                                <td>Total</td>
+                                                <td><span>&euro;</span> {{ $total }}</td>
+                                            </tr>
 
-                                                <tr>
-                                                    <td>Total</td>
-                                                    <td><span>FCFA</span> {{ $total }}</td>
-                                                </tr>
-                                            @endforeach
                                         </table>
                                     </div>
                                     <div class="panel-footer">
-                                        <form>
-                                            <input type="submit" class="btn btn-primary" name="submit"
-                                                value=" Réserver maintenant">
-                                        </form>
+                                        <form >
+                                            <a type="submit" class="btn btn-primary" name="submit" href="{{ route('home.reservation',['service_slug'=>$services->slug]) }}"
+                                                >Réserver maintenant</a>
+                                            </form>
                                     </div>
                                 </div>
                             </aside>
@@ -144,18 +142,19 @@
                                                 <div class="content-btn"><a
                                                         href="{{ route('home.service.sprovider', ['service_slug' => $r_services->slug]) }}"
                                                         class="btn btn-warning">Voir les détails</a></div>
-                                                {{-- <div class="price"><span>FCFA</span><b>de</b>{{ $r_services->price }} --}}
+                                                <div class="price">
+                                                    <span>&euro;</span><b>de</b>{{ $r_services->price }}
+                                                </div>
                                             </div>
+                                        </a>
                                     </div>
-                                    </a>
+                                @else
+                                @endif
+                            </aside>
                         </div>
-                    @else
-                        @endif
-                        </aside>
                     </div>
                 </div>
             </div>
         </div>
-</div>
-</section>
+    </section>
 </div>

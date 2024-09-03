@@ -81,7 +81,7 @@
                                         <div class="content-btn"><a
                                                 href="{{ route('home.service.sprovider', ['service_slug' => $fservice->slug]) }}"
                                                 class="btn btn-primary">Réserver</a></div>
-                                        {{-- <div class="price"><span>FCFA</span><b>pour</b>{{ $fservice->price }}</div> --}}
+                                        <div class="price"><span>&euro;</span><b>pour</b>{{ $fservice->price }}</div>                                        
                                     </div>
                                 </a>
                             </div>
@@ -151,7 +151,7 @@
                                 <div class="content-btn"><a
                                         href="{{ route('home.service.sprovider', ['service_slug' => $aservice->slug]) }}"
                                         class="btn btn-primary">Réservez</a></div>
-                                {{-- <div class="price"><span>FCFA</span><b>pour</b>{{ $aservice->price }}</div> --}}
+                                <div class="price"><span>&euro;</span><b>pour</b>{{ $aservice->price }}</div>
                             </div>
                         </a>
                     </div>

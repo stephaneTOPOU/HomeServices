@@ -15,4 +15,9 @@ class Service extends Model
     {
         return $this->belongsTo(ServiceCategory::class, 'service_category_id');
     }
+
+    public function orderItems()
+    {
+        return $this->hasMany(Order_item::class,'product_id');
+    }
 }

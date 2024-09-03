@@ -92,7 +92,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label for="discount" class="control-label col-sm-4">Réduction : </label>
                                             <div class="col-sm-8">
                                                 <input type="text" class="form-control" name="discount" wire:model="discount" />
@@ -114,7 +114,7 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group">
                                             <label for="featured" class="control-label col-sm-4">En vedette : </label>

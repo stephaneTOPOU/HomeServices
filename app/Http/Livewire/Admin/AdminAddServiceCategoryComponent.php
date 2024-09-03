@@ -47,6 +47,7 @@ class AdminAddServiceCategoryComponent extends Component
         $category->image = $imageName;
 
         $category->save();
+        $this->reset(['name','slug','image']);
         session()->flash('message', 'Catégorie créée avec succes !');
     }
 

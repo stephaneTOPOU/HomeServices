@@ -185,6 +185,12 @@ return [
         
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
+
+        /* 
+        * cartalyst/stripe Provider
+        */
+        Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
+
     ],
 
     /*
@@ -243,6 +249,8 @@ return [
 
 
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+
+        'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
 
     ],
 

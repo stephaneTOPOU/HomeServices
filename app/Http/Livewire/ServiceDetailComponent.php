@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Service;
 use App\Models\ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class ServiceDetailComponent extends Component
@@ -15,6 +16,15 @@ class ServiceDetailComponent extends Component
         $this->service_slug = $service_slug;
     }
 
+    public function reservation()
+    {
+        if (Auth::check()) {
+            return redirect()->route('home.reservation');
+        } else {
+            return redirect()->route('login');
+        }
+    }
+    
     public function render()
     {
         $services = Service::where('slug', $this->service_slug)->first();

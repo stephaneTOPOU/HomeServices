@@ -85,6 +85,7 @@ class AdminAddServiceComponent extends Component
         $service->image = $imageName2;
         
         $service->save();
+        $this->reset(['name','slug','tagline','service_category_id','price','discount','discount_type','description','inclusion','exclusion', 'thumbnail', 'image']);
         session()->flash('message', 'Service créé avec succes !');
     }
 

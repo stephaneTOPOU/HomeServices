@@ -19,14 +19,20 @@ use App\Http\Livewire\CGUComponent;
 use App\Http\Livewire\ChangeLocationComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
+use App\Http\Livewire\Customer\CustomerOrderdetailsComponent;
+use App\Http\Livewire\Customer\CustomerOrdersComponent;
+use App\Http\Livewire\Customer\CustomerReviewComponent;
 use App\Http\Livewire\FaqComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\PrivacyComponent;
+use App\Http\Livewire\ReservationComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
 use App\Http\Livewire\ServiceDetailComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
 use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
+use App\Http\Livewire\Sprovider\SproviderOrderComponent;
+use App\Http\Livewire\Sprovider\SproviderOrderDetailsComponent;
 use App\Http\Livewire\Sprovider\SproviderProfileComponent;
 use App\Http\Livewire\SproviderComponent;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +56,7 @@ Route::get('/', HomeComponent::class)->name('home');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('service.categories');
 Route::get('/{category_slug}/service', ServicesByCategoryComponent::class)->name('home.service');
 Route::get('/service/{service_slug}', SproviderComponent::class)->name('home.service.sprovider');
+Route::get('/service/{service_slug}/reservation', ReservationComponent::class)->name('home.reservation');
 Route::get('service/{service_slug}/details', ServiceDetailComponent::class)->name('home.service.detail');
 
 
@@ -69,14 +76,19 @@ Route::get('/privacy', PrivacyComponent::class)->name('privacy');
 
 //Pour les clients
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/client/dashboard', CustomerDashboardComponent::class)->name('customer.dashboard');
+    Route::get('/client-dashboard', CustomerDashboardComponent::class)->name('customer.dashboard');
+    Route::get('/client/reservation', CustomerOrdersComponent::class)->name('customer.orders');
+    Route::get('/client/reservation/{order_id}', CustomerOrderdetailsComponent::class)->name('customer.orderdetails');
+    Route::get('/client/review/{order_item_id}', CustomerReviewComponent::class)->name('customer.review');
 });
 
 //Pour les Prestataires de services
 Route::middleware(['auth:sanctum', 'verified', 'authsprovider'])->group(function () {
-    Route::get('/service-provider/dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
-    Route::get('/sprovider-profile', SproviderProfileComponent::class)->name('sprovider.profile');
-    Route::get('/sprovider-profile/edit', EditSproviderProfileComponent::class)->name('sprovider.profile.edit');
+    Route::get('/prestataire-dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
+    Route::get('/prestataire-profile', SproviderProfileComponent::class)->name('sprovider.profile');
+    Route::get('/prestataire-profile/edit', EditSproviderProfileComponent::class)->name('sprovider.profile.edit');
+    Route::get('/prestataire/reservation', SproviderOrderComponent::class)->name('sprovider.orders');
+    Route::get('/prestataire/reservation/{order_id}', SproviderOrderDetailsComponent::class)->name('sprovider.orderdetails');
 });
 
 
