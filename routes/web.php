@@ -35,6 +35,7 @@ use App\Http\Livewire\Sprovider\SproviderOrderComponent;
 use App\Http\Livewire\Sprovider\SproviderOrderDetailsComponent;
 use App\Http\Livewire\Sprovider\SproviderProfileComponent;
 use App\Http\Livewire\SproviderComponent;
+use App\Http\Livewire\ThankYouComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +54,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', HomeComponent::class)->name('home');
+Route::get('/thank-you', ThankYouComponent::class)->name('thankyou');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('service.categories');
 Route::get('/{category_slug}/service', ServicesByCategoryComponent::class)->name('home.service');
 Route::get('/service/{service_slug}', SproviderComponent::class)->name('home.service.sprovider');
@@ -98,7 +100,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/service-categories', AdminServiceCategoryComponent::class)->name('admin.service_categories');
     Route::get('/admin/service-categories/add', AdminAddServiceCategoryComponent::class)->name('admin.service_cat.add');
     Route::get('/admin/service-categories/edit/{category_id}', AdminEditServiceCategoryComponent::class)->name('admin.service_cat.edit');
-    Route::get('/admin/all-service',AdminServiceComponent::class)->name('admin.service');
+    Route::get('/admin/all-service', AdminServiceComponent::class)->name('admin.service');
     Route::get('/admin/{category_slug}/services', AdminServicesByCategoryComponent::class)->name('admin.services_by_cat');
     Route::get('/admin/service/add', AdminAddServiceComponent::class)->name('admin.service.add');
     Route::get('/admin/service/edit/{service_slug}', AdminEditServiceComponent::class)->name('amin.service.edit');

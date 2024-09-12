@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Confirmation des réservation</title>
+    <title>Confirmation de la réservation</title>
 </head>
 
 <body>
@@ -24,28 +24,14 @@
         <tbody>
             @foreach ($order->orderItems as $item)
                 <tr>
-                    <td><img src="{{ asset('images/services') }}/{{ $item->service->image }}" width="100"
-                            alt="{{ $item->service->name }}"></td>
+                    <td><img src="{{ asset('images/services') }}/{{ $item->service->image }}" width="100" alt="{{ $item->service->name }}"></td>
                     <td>{{ $item->service->name }}</td>                    
-                    <td>{{ $item->price }} FCFA</td>
+                    <td>{{ $item->price }} <span>&euro;</span></td>
                 </tr>
             @endforeach
-            {{-- <tr>
-                <td colspan="3" style="border-top: 1px solid #ccc;"></td>
-                <td style="font-size: 15px; font-weight: bold; border-top: 1px solid #ccc;">Sous-total :
-                    {{ $order->subtotal }} FCFA</td>
-            </tr>
             <tr>
                 <td colspan="3"></td>
-                <td style="font-size: 15px; font-weight: bold">Taxe : {{ $order->tax }} FCFA</td>
-            </tr>
-            <tr>
-                <td colspan="3"></td>
-                <td style="font-size: 15px; font-weight: bold">Livraison : Livraison gratuite</td>
-            </tr> --}}
-            <tr>
-                <td colspan="3"></td>
-                <td style="font-size: 22px; font-weight: bold">Total : {{ $item->price  }} FCFA</td>
+                <td style="font-size: 22px; font-weight: bold">Total : {{ $item->price  }} <span>&euro;</span></td>
             </tr>
         </tbody>
     </table>
