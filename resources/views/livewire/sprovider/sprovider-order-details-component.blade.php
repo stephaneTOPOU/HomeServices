@@ -29,7 +29,8 @@
                                                     Détails service
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <a href="{{ route('sprovider.orders') }}" class="btn btn-success pull-right">Toutes les
+                                                    <a href="{{ route('sprovider.orders', ['slug' => Auth::user()->slug]) }}"
+                                                        class="btn btn-success pull-right">Toutes les
                                                         transactions</a>
                                                 </div>
                                             </div>
@@ -41,8 +42,16 @@
                                                     <th>{{ $order->id }}</th>
                                                     <th>Date da la transaction</th>
                                                     <th>{{ $order->created_at }}</th>
+
                                                     <th>Status</th>
-                                                    <th>{{ $order->status }}</th>
+                                                    @if ($order->status === 'performed')
+                                                        <th>Livré</th>
+                                                    @elseif ($order->status === 'canceled')
+                                                        <th>Annulé</th>
+                                                    @else
+                                                        <th>commandé</th>
+                                                    @endif
+
                                                     @if ($order->status == 'performed')
                                                         <th>Date de livraison</th>
                                                         <th>{{ $order->delivered_date }}</th>
@@ -50,7 +59,7 @@
                                                         <th>Date d'annulation</th>
                                                         <th>{{ $order->canceled_date }}</th>
                                                     @endif
-                    
+
                                                 </tr>
                                             </table>
                                         </div>
@@ -66,13 +75,13 @@
                                                     Service demandé
                                                 </div>
                                                 <div class="col-md-6">
-                    
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="panel-body">
                                             <div class="wrap-iten-in-cart">
-                    
+
                                                 <div class="products-cart">
                                                     @foreach ($order->orderItems as $item)
                                                         <div class="pr-cart-item">
@@ -80,11 +89,12 @@
                                                                 <div class="product-image">
                                                                     <figure><img
                                                                             src="{{ asset('images/services') }}/{{ $item->service->image }}"
-                                                                            alt="{{ $item->service->name }}" width="110" height="90">
+                                                                            alt="{{ $item->service->name }}"
+                                                                            width="110" height="90">
                                                                     </figure>
                                                                 </div>
                                                             </div>
-                    
+
                                                             <div class="product-name">
                                                                 <div class="col-md-6">
                                                                     <p class="price">Nom du service : </p>
@@ -95,29 +105,23 @@
                                                                     </p>
                                                                 </div>
                                                             </div>
-                    
+
                                                             <div class="price-field produtc-price">
                                                                 <div class="col-md-6">
                                                                     <p class="price">Prix : </p>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p class="price">{{ $item->price }} FCFA</p>
+                                                                    <p class="price">{{ $item->price }} &euro;</p>
                                                                 </div>
                                                             </div>
-                                                            <div class="quantity">
-                                                                <div class="col-md-6">
-                                                                    <p class="price">Quantité : </p>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <h5>{{ $item->quantity }}</h5>
-                                                                </div>
-                                                            </div>
+
                                                             <div class="price-field sub-total">
                                                                 <div class="col-md-6">
                                                                     <p class="price">Total : </p>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p class="price">{{ $item->price * $item->quantity }} FCFA</p>
+                                                                    <p class="price">
+                                                                        {{ $item->price * 1 }} &euro;</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -129,11 +133,13 @@
                                                     <h4 class="title-box">Récapitulatif de la commande</h4>
                                                     <div class="col-md-12">
                                                         <div class="col-md-6">
-                                                            <p class="summary-info"> <span class="title">Sous-total</span></p>
+                                                            <p class="summary-info"> <span
+                                                                    class="title">Sous-total</span></p>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <p class="summary-info"> <span class="title"><b
-                                                                        class="index">{{ $order->subtotal }} FCFA</b></span></p>
+                                                                        class="index">{{ $order->subtotal }}
+                                                                        &euro;</b></span></p>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
@@ -142,16 +148,19 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <p class="summary-info"> <span class="title"><b
-                                                                        class="index">{{ $order->tax }} FCFA</b></span></p>
+                                                                        class="index">{{ $order->tax }}
+                                                                        &euro;</b></span></p>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="col-md-6">
-                                                            <p class="summary-info"> <span class="title">Total</span></p>
+                                                            <p class="summary-info"> <span class="title">Total</span>
+                                                            </p>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <p class="summary-info"> <span class="title"><b
-                                                                        class="index">{{ $order->total }} FCFA</b></span></p>
+                                                                        class="index">{{ $order->total }}
+                                                                        &euro;</b></span></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -160,7 +169,7 @@
                                     </div>
                                 </div>
                             </div>
-                    
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="panel panel-default">
@@ -181,26 +190,26 @@
                                                     <th>E-mail</th>
                                                     <th>{{ $order->email }}</th>
                                                 </tr>
-                    
+
                                                 <tr>
                                                     <th>Ville</th>
                                                     <th>{{ $order->city }}</th>
                                                     <th>Pays</th>
                                                     <th>{{ $order->country }}</th>
                                                 </tr>
-                    
+
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                    
+
                             @if ($order->is_shipping_different)
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                Les détails d'expédition
+                                                Détails d'expédition
                                             </div>
                                             <div class="panel-body">
                                                 <table class="table">
@@ -240,22 +249,42 @@
                                     </div>
                                 </div>
                             @endif
-                    
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            Les Transactions
+                                            Transactions
                                         </div>
                                         <div class="panel-body">
                                             <table class="table">
                                                 <tr>
                                                     <th>Mode de Transaction</th>
-                                                    <td>{{ $order->transaction->mode }}</td>
+
+                                                    @if ($order->transaction->mode === 'cod')
+                                                        <td>Après service </td>
+                                                    @elseif ($order->transaction->mode === 'card')
+                                                        <td>Par carte</td>
+                                                    @elseif ($order->transaction->mode === 'paypal')
+                                                        <td>Par Paypal</td>
+                                                    @else
+                                                        <td>Par Paygate</td>
+                                                    @endif
+
                                                 </tr>
                                                 <tr>
                                                     <th>Status</th>
-                                                    <td>{{ $order->transaction->status }}</td>
+
+                                                    @if ($order->transaction->status === 'approved')
+                                                        <td>approuvé</td>
+                                                    @elseif ($order->transaction->status === 'declined')
+                                                        <td>décliné</td>
+                                                    @elseif ($order->transaction->status === 'refunded')
+                                                        <td>remboursé</td>
+                                                    @else
+                                                        <td>en attente</td>
+                                                    @endif
+
                                                 </tr>
                                                 <tr>
                                                     <th>Date de Transaction</th>
@@ -273,4 +302,3 @@
         </div>
     </section>
 </div>
-

@@ -20,4 +20,9 @@ class Service extends Model
     {
         return $this->hasMany(Order_item::class,'product_id');
     }
+
+    public function serviceProvider()
+    {
+        return $this->hasOne(ServiceProvider::class);
+    }
 }

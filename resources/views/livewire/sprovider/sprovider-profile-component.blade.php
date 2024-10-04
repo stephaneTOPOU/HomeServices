@@ -119,7 +119,7 @@
                                     <div class="row">
                                         <div class="col-md-6"></div>
                                         <div class="col-md-6">
-                                            <a href="{{ route('sprovider.profile.edit') }}"
+                                            <a href="{{ route('sprovider.profile.edit',['slug'=>Auth::user()->slug]) }}"
                                                 class="btn btn-info pull-right">Modifier</a>
                                         </div>
                                     </div>

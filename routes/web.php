@@ -9,6 +9,7 @@ use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditServiceComponent;
+use App\Http\Livewire\Admin\AdminEditServiceProvidersComponent;
 use App\Http\Livewire\Admin\AdminEditSliderComponent;
 use App\Http\Livewire\Admin\AdminServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminServiceComponent;
@@ -84,13 +85,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/client/review/{order_item_id}', CustomerReviewComponent::class)->name('customer.review');
 });
 
+
 //Pour les Prestataires de services
 Route::middleware(['auth:sanctum', 'verified', 'authsprovider'])->group(function () {
-    Route::get('/prestataire-dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
-    Route::get('/prestataire-profile', SproviderProfileComponent::class)->name('sprovider.profile');
-    Route::get('/prestataire-profile/edit', EditSproviderProfileComponent::class)->name('sprovider.profile.edit');
-    Route::get('/prestataire/reservation', SproviderOrderComponent::class)->name('sprovider.orders');
-    Route::get('/prestataire/reservation/{order_id}', SproviderOrderDetailsComponent::class)->name('sprovider.orderdetails');
+    Route::get('/prestaire/{slug}', SproviderProfileComponent::class)->name('sprovider.profile');
+    Route::get('/prestaire/{slug}/dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
+    Route::get('/prestaire/{slug}/edit', EditSproviderProfileComponent::class)->name('sprovider.profile.edit');
+    Route::get('/prestaire/{slug}/reservation', SproviderOrderComponent::class)->name('sprovider.orders');
+    Route::get('/prestaire/{slug}/reservation/{order_id}', SproviderOrderDetailsComponent::class)->name('sprovider.orderdetails');
 });
 
 
@@ -112,4 +114,5 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin-contact', AdminContactComponent::class)->name('admin.contact');
 
     Route::get('/admin-service-provider', AdminServiceProvidersComponent::class)->name('admin.sprovider');
+    Route::get('/admin-edit-service-provider/{id}', AdminEditServiceProvidersComponent::class)->name('admin.edit.sprovider');
 });

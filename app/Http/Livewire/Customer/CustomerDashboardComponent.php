@@ -15,7 +15,7 @@ class CustomerDashboardComponent extends Component
         $totalPurchase = Order::where('status','!=','canceled')->where('user_id',Auth::user()->id)->count();
         $totalDeliver = Order::where('status','delivered')->where('user_id',Auth::user()->id)->count();
         $totalCancel = Order::where('status','canceled')->where('user_id',Auth::user()->id)->count();
-        
+
         return view('livewire.customer.customer-dashboard-component',['orders'=>$orders,'totalCost'=>$totalCost,'totalPurchase'=>$totalPurchase,'totalDeliver'=>$totalDeliver,'totalCancel'=>$totalCancel])->layout('layouts.base');
     }
 }

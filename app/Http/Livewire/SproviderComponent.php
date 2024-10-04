@@ -20,7 +20,7 @@ class SproviderComponent extends Component
         $service_id = Service::where('slug', $this->service_slug)->select('id')->first();
         // dd($service_id);
         $services = Service::where('slug', $this->service_slug)->first();
-        $sproviders = ServiceProvider::where('service_id',$service_id->id)->get();
+        $sproviders = ServiceProvider::where('service_id',$service_id->id)->where('valide', 1)->get();
         return view('livewire.sprovider-component', ['sproviders'=>$sproviders, 'services'=>$services])->layout('layouts.base');
     }
 }

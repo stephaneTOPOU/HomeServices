@@ -27,7 +27,7 @@
                                             Modifier un profile
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="{{ route('sprovider.profile') }}"
+                                            <a href="{{ route('sprovider.profile',['slug'=>Auth::user()->slug]) }}"
                                                 class="btn btn-info pull-right">Mon profil</a>
                                         </div>
                                     </div>
@@ -201,7 +201,7 @@
                                                         @enderror
                                                     </div>
                                                 </div>
-        
+
                                                 <div class="form-group">
                                                     <label for="sp_discount_type" class="control-label col-sm-4">Type de réduction : </label>
                                                     <div class="col-sm-8">

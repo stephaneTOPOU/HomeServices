@@ -24,7 +24,7 @@
                                 padding-top: 40px;
                                 padding-bottom: 40px;
                             }
-                    
+
                             .icon-stat {
                                 display: block;
                                 overflow: hidden;
@@ -35,19 +35,19 @@
                                 border-radius: 4px;
                                 border: 1px solid #ddd;
                             }
-                    
+
                             .icon-stat-label {
                                 display: block;
                                 color: #999;
                                 font-size: 13px;
                             }
-                    
+
                             .icon-stat-value {
                                 display: block;
                                 font-size: 28px;
                                 font-weight: 600;
                             }
-                    
+
                             .icon-stat-visual {
                                 position: relative;
                                 top: 22px;
@@ -59,17 +59,17 @@
                                 font-size: 16px;
                                 line-height: 30px;
                             }
-                    
+
                             .bg-primary {
                                 color: #fff;
                                 background: #d74b4b;
                             }
-                    
+
                             .bg-secondary {
                                 color: #fff;
                                 background: #6685a4;
                             }
-                    
+
                             .icon-stat-footer {
                                 padding: 10px 0 0;
                                 margin-top: 10px;
@@ -78,7 +78,7 @@
                                 border-top: 1px solid #eee;
                             }
                         </style>
-                    
+
                         @php
                             function pretty_number(int $n): string
                             {
@@ -97,7 +97,7 @@
                                 return $prettyN . $suffix;
                             }
                         @endphp
-                    
+
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-3 col-sm-6">
@@ -203,7 +203,7 @@
                                                             <td>{{ $order->email }}</td>
                                                             <td>{{ $order->status }}</td>
                                                             <td>{{ $order->created_at }}</td>
-                                                            <td><a href="{{ route('sprovider.orderdetails', ['order_id' => $order->id]) }}"
+                                                            <td><a href="{{ route('sprovider.orderdetails', ['slug'=>Auth::user()->slug,'order_id' => $order->id]) }}"
                                                                     class="btn btn-info btn-sm">Détails</a></td>
                                                         </tr>
                                                     @endforeach

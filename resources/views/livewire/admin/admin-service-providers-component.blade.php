@@ -48,13 +48,15 @@
                                                     <th>#</th>
                                                     <th>Image</th>
                                                     <th>Nom</th>
+                                                    <th>Fournisseur validé</th>
                                                     <th>Email</th>
                                                     <th>Téléphone</th>
                                                     <th>Ville</th>
                                                     <th>Service</th>
-                                                    <th>Adresse du fournisseur</th>
-                                                    <th>Prix du fournisseur</th>
+                                                    <th>Adresse</th>
+                                                    <th>Prix</th>
                                                     <th>Date</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -62,9 +64,23 @@
                                                 @foreach ($sproviders as $sprovider)
                                                     <tr>
                                                         <td>{{ $sprovider->id }}</td>
-                                                        <td><img src="{{ asset('images/sprovider') }}/{{ $sprovider->image }}"
-                                                                alt="{{ $sprovider->name }}" width="60" /></td>
+                                                        @if ($sprovider->image)
+                                                            <td><img src="{{ asset('images/sprovider') }}/{{ $sprovider->image }}"
+                                                                alt="{{ $sprovider->user->name }}" width="60" />
+                                                            </td>
+                                                        @else
+                                                            <td><img src="{{ asset('images/sprovider/default.png') }}"
+                                                                alt="{{ $sprovider->user->name }}" width="60" />
+                                                            </td>
+                                                        @endif
+
                                                         <td>{{ $sprovider->user->name }}</td>
+
+                                                        @if ($sprovider->valide == true)
+                                                            <td>Oui</td>
+                                                        @else
+                                                            <td>Non</td>
+                                                        @endif
                                                         <td>{{ $sprovider->user->email }}</td>
                                                         <td>{{ $sprovider->user->phone }}</td>
                                                         <td>{{ $sprovider->city }}</td>
@@ -72,7 +88,9 @@
                                                         <td>{{ $sprovider->service_location }}</td>
                                                         <td>{{ $sprovider->prix }}</td>
                                                         <td>{{ $sprovider->created_at }}</td>
-
+                                                        <td>
+                                                            <a href="{{ route('admin.edit.sprovider',['id'=>$sprovider->id]) }}"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                                        </td>
                                                     </tr>
                                                 @endforeach
 

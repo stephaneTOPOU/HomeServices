@@ -16,6 +16,7 @@ class EditSproviderProfileComponent extends Component
 
     public $service_provider_id;
     public $image;
+    public $sp_slug;
     public $about;
     public $city;
     public $service_id;
@@ -34,6 +35,7 @@ class EditSproviderProfileComponent extends Component
 
         $this->service_provider_id = $sprofiles->id;
         $this->image = $sprofiles->image;
+        $this->sp_slug = $sprofiles->slug;
         $this->about = $sprofiles->about;
         $this->city = $sprofiles->city;
         $this->service_id = $sprofiles->service_id;
@@ -85,7 +87,7 @@ class EditSproviderProfileComponent extends Component
             ]);
         }
         $sprofiles = ServiceProvider::where('user_id', Auth::user()->id)->first();
-        
+
         if ($this->disponible) {
             $sprofiles->disponible = $this->disponible;
         }else {
@@ -102,7 +104,7 @@ class EditSproviderProfileComponent extends Component
         $sprofiles->sp_discount = $this->sp_discount;
         $sprofiles->sp_discount_type = $this->sp_discount_type;
 
-        if ($this->newimage) {            
+        if ($this->newimage) {
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();
             $this->newimage->storeAs('sprovider', $imageName);
             $sprofiles->image = $imageName;

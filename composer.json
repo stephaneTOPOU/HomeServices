@@ -8,6 +8,7 @@
         "php": "^7.3|^8.0",
         "artesaos/seotools": "^1.2",
         "cartalyst/stripe-laravel": "^13.1",
+        "cviebrock/eloquent-sluggable": "^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",

@@ -20,11 +20,11 @@
                     <li><a href="{{ route('home.service.sprovider',['service_slug'=>$home->slug]) }}">{{ $home->name }}</a></li>
                 @endforeach
             </ul>
-        </li>        
+        </li>
         @if (Route::has('login'))
             @auth
                 @if (Auth::user()->utype === 'ADM')
-                    <li class="login-form"> <a href="#" title="Register">Mon compte(Admin)</a>
+                    <li class="login-form"> <a href="#" title="Register">{{ Auth::user()->name }} {{ Auth::user()->firstname }}</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                             <li><a href="{{ route('admin.service_categories') }}">Catégories services</a></li>
@@ -38,18 +38,17 @@
                         </ul>
                     </li>
                 @elseif (Auth::user()->utype === 'SVP')
-                    <li class="login-form"> <a href="#" title="Register">Mon compte(Prestataire de
-                            services)</a>
+                    <li class="login-form"> <a href="#" title="Register">{{ Auth::user()->name }} {{ Auth::user()->firstname }}</a>
                         <ul class="drop-down one-column hover-fade">
-                            <li><a href="{{ route('sprovider.dashboard') }}">DashBoard</a></li>
-                            <li><a href="{{ route('sprovider.profile') }}">Profil</a></li>
+                            <li><a href="{{ route('sprovider.dashboard',['slug'=>Auth::user()->slug]) }}">DashBoard</a></li>
+                            <li><a href="{{ route('sprovider.profile',['slug'=>Auth::user()->slug]) }}">Profil</a></li>
                             <li><a href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
                             </li>
                         </ul>
                     </li>
                 @else
-                    <li class="login-form"> <a href="#" title="Register">Mon compte(Client)</a>
+                    <li class="login-form"> <a href="#" title="Register">{{ Auth::user()->name }} {{ Auth::user()->firstname }}</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="{{ route('customer.dashboard') }}">DashBoard</a></li>
                             <li><a href="{{ route('logout') }}"
