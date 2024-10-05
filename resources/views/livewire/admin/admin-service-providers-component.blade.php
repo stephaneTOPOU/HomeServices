@@ -66,11 +66,11 @@
                                                         <td>{{ $sprovider->id }}</td>
                                                         @if ($sprovider->image)
                                                             <td><img src="{{ asset('images/sprovider') }}/{{ $sprovider->image }}"
-                                                                alt="{{ $sprovider->user->name }}" width="60" />
+                                                                    alt="{{ $sprovider->user->name }}" width="60" />
                                                             </td>
                                                         @else
                                                             <td><img src="{{ asset('images/sprovider/default.png') }}"
-                                                                alt="{{ $sprovider->user->name }}" width="60" />
+                                                                    alt="{{ $sprovider->user->name }}" width="60" />
                                                             </td>
                                                         @endif
 
@@ -84,12 +84,21 @@
                                                         <td>{{ $sprovider->user->email }}</td>
                                                         <td>{{ $sprovider->user->phone }}</td>
                                                         <td>{{ $sprovider->city }}</td>
-                                                        <td>{{ $sprovider->service->name }}</td>
-                                                        <td>{{ $sprovider->service_location }}</td>
+                                                        
+                                                        @if ($sprovider->service->name)
+                                                            <td>{{ $sprovider->service->name }}</td>
+                                                        @endif
+
+                                                        @if ($sprovider->service_location)
+                                                            <td>{{ $sprovider->service_location }}</td>
+                                                        @endif
+
                                                         <td>{{ $sprovider->prix }}</td>
                                                         <td>{{ $sprovider->created_at }}</td>
                                                         <td>
-                                                            <a href="{{ route('admin.edit.sprovider',['id'=>$sprovider->id]) }}"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                                            <a
+                                                                href="{{ route('admin.edit.sprovider', ['id' => $sprovider->id]) }}"><i
+                                                                    class="fa fa-edit fa-2x text-info"></i></a>
                                                         </td>
                                                     </tr>
                                                 @endforeach
