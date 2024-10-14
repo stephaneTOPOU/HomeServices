@@ -6,6 +6,7 @@ use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
 use App\Http\Livewire\Admin\AdminAddSliderComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
+use App\Http\Livewire\Admin\AdminCustomerComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditServiceComponent;
@@ -115,4 +116,6 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
 
     Route::get('/admin-service-provider', AdminServiceProvidersComponent::class)->name('admin.sprovider');
     Route::get('/admin-edit-service-provider/{id}', AdminEditServiceProvidersComponent::class)->name('admin.edit.sprovider');
+
+    Route::get('/admin-customer', AdminCustomerComponent::class)->name('admin.customer');
 });

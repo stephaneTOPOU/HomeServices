@@ -41,6 +41,9 @@
                                     </div>
                                 </div>
                                 <div class="panel-body">
+                                    @if (Session::has('message'))
+                                        <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                                    @endif
                                     @if ($sproviders->count() > 0)
                                         <table class="table table-striped">
                                             <thead>
@@ -56,7 +59,7 @@
                                                     <th>Adresse</th>
                                                     <th>Prix</th>
                                                     <th>Date</th>
-                                                    <th>Action</th>
+                                                    <th>Actions </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -99,9 +102,8 @@
                                                         <td>{{ $sprovider->prix }}</td>
                                                         <td>{{ $sprovider->created_at }}</td>
                                                         <td>
-                                                            <a
-                                                                href="{{ route('admin.edit.sprovider', ['id' => $sprovider->id]) }}"><i
-                                                                    class="fa fa-edit fa-2x text-info"></i></a>
+                                                            <a href="{{ route('admin.edit.sprovider', ['id' => $sprovider->id]) }}"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                                            <a href="#" onclick="confirm('Voulez - vous supprimer ce fournisseur !?') || event.stopImmediatePropagation()" wire:click.prevent="deleteSprovider({{ $sprovider->id }})" style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
                                                         </td>
                                                     </tr>
                                                 @endforeach
