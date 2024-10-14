@@ -74,19 +74,22 @@
                                                             </td>
                                                         @endif
 
-                                                        <td>{{ $sprovider->user->name }}</td>
+                                                        <td>{{ $sprovider->user?->name }}</td>
 
                                                         @if ($sprovider->valide == true)
                                                             <td>Oui</td>
                                                         @else
                                                             <td>Non</td>
                                                         @endif
-                                                        <td>{{ $sprovider->user->email }}</td>
-                                                        <td>{{ $sprovider->user->phone }}</td>
+
+                                                        <td>{{ $sprovider->user?->email }}</td>
+                                                        <td>{{ $sprovider->user?->phone }}</td>
                                                         <td>{{ $sprovider->city }}</td>
-                                                        
-                                                        @if ($sprovider->service->name)
-                                                            <td>{{ $sprovider->service->name }}</td>
+
+                                                        {{-- ou on peut utiliser ça aussi <td>{{ $sprovider->user->name ?? 'None' }}</td> --}}
+
+                                                        @if ($sprovider->service?->name)
+                                                            <td>{{ $sprovider->service?->name }}</td>
                                                         @endif
 
                                                         @if ($sprovider->service_location)
