@@ -153,23 +153,9 @@ class ReservationComponent extends Component
             $this->makeTransaction($order->id, 'pending');
             $this->resetCart();
         } else if ($this->paymentmode == 'card') {
-            $stripe = Stripe::make(env('STRIPE_Key'));
+            $stripe = Stripe::make(env('STRIPE_SECRET'));
 
             try {
-                $token = $stripe->tokens()->create([
-                    'card' => [
-                        'number' => $this->card_no,
-                        'exp_month' => $this->exp_month,
-                        'exp_year' => $this->exp_year,
-                        'cvc' => $this->cvc
-                    ]
-                ]);
-
-                if (!isset($token['id'])) {
-                    session()->flash('stripe_error', 'Le jeton de la bande na pas été généré correctement !!');
-                    $this->thankyou = 0;
-                }
-
                 $customer = $stripe->customers()->create([
                     'name' => $this->lastname . ' ' . $this->firstname,
                     'email' => $this->email,
@@ -185,25 +171,27 @@ class ReservationComponent extends Component
                             'country' => $this->country
                         ],
                     ],
-                    'source' => $token['id']
+                    'source' => request('stripeToken') // Utilise le token transmis par le frontend
                 ]);
 
                 $charge = $stripe->charges()->create([
                     'customer' => $customer['id'],
-                    'currency' => 'EUR',
-                    'amount' => $this->price,
-                    'description' => 'Paiement pour la commande no ' . $order->id
+                    'amount' => 1000, // Montant en centimes (10.00 € ici)
+                    'currency' => 'eur',
+                    'description' => 'Paiement pour la commande no ' . $order->id,
+                    //'source' => $customer->id,
                 ]);
 
                 if ($charge['status'] == 'succeeded') {
                     $this->makeTransaction($order->id, 'approved');
                     $this->resetCart();
+                    session()->flash('success', 'Paiement effectué avec succès ! Merci pour votre commande.');
                 } else {
-                    session()->flash('stripe_error', 'Erreur dans la transaction !');
+                    session()->flash('stripe_error', 'La transaction a échoué. Veuillez réessayer.');
                     $this->thankyou = 0;
                 }
             } catch (Exception $e) {
-                session()->flash('stripe_error', $e->getMessage());
+                session()->flash('stripe_error', 'Erreur inattendue : ' . $e->getMessage());
                 $this->thankyou = 0;
             }
         }
