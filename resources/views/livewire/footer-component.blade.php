@@ -105,7 +105,7 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <p class="text-xs-center crtext">&copy; 2024 LDN Service. Tous droits réservés.</p>
+                    <p class="text-xs-center crtext">&copy; 2025 LDN Service. Tous droits réservés.</p>
                 </div>
             </div>
         </div>

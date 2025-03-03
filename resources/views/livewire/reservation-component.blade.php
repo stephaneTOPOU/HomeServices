@@ -200,7 +200,12 @@
                                                         <div class="alert alert-danger" role="alert">
                                                             {{ Session::get('stripe_error') }}</div>
                                                     @endif
-                                                    <div class="form-group">
+
+                                                    <div id="card-element" class="form-group">
+                                                        <!-- Stripe Elements insère ici le champ de carte -->
+                                                    </div>
+
+                                                    {{-- <div class="form-group">
                                                         <label for="card-no" class="control-label col-sm-4">Numéro de
                                                             carte:</label>
                                                         <div class="col-sm-8">
@@ -250,7 +255,7 @@
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             @endif
 
@@ -306,3 +311,26 @@
         </div>
     </section>
 </div>
+
+@if ($paymentmode == 'card')<script src="https://js.stripe.com/v3/"></script>@endif
+@if ($paymentmode == 'card')
+<script>
+    const stripe = Stripe("{{ env('STRIPE_KEY') }}");
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
+
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const { token, error } = await stripe.createToken(cardElement);
+        if (error) {
+            console.error(error.message);
+        } else {
+            console.log("Token reçu :", token);
+            // Envoyez le token au backend
+        }
+    });
+</script>
+@endif

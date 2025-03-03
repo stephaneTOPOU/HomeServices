@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\ServiceCategory;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class ServicesByCategoryComponent extends Component
@@ -21,6 +22,10 @@ class ServicesByCategoryComponent extends Component
 
 
         //dd($this->category_slug);
+        foreach ($categories as $categorie) {
+            View::share('value', 'https://www.homes-services.com/{{ $categorie->name }}/service');
+            View::share('value2', 'https://www.homes-services.com/{{ $categorie->name }}/service');
+        }
 
         return view('livewire.services-by-category-component', ['categories' => $categories])->layout('layouts.base');
     }

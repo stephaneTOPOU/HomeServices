@@ -8,12 +8,15 @@ use App\Models\Order_item;
 use App\Models\Service;
 use App\Models\Shipping;
 use App\Models\Transaction;
-use Cartalyst\Stripe\Stripe;
+
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 use Livewire\Request;
+use Stripe\Stripe;
+use Stripe\Charge;
 
 class ReservationComponent extends Component
 {
@@ -153,33 +156,40 @@ class ReservationComponent extends Component
             $this->makeTransaction($order->id, 'pending');
             $this->resetCart();
         } else if ($this->paymentmode == 'card') {
-            $stripe = Stripe::make(env('STRIPE_SECRET'));
-
+            \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+            dd(env('STRIPE_SECRET'));
             try {
-                $customer = $stripe->customers()->create([
-                    'name' => $this->lastname . ' ' . $this->firstname,
-                    'email' => $this->email,
-                    'phone' => $this->mobile,
-                    'address' => [
-                        'city' => $this->city,
-                        'country' => $this->country
+                $token = \Stripe\Token::create([
+                    // 'name' => $this->lastname . ' ' . $this->firstname,
+                    // 'email' => $this->email,
+                    // 'phone' => $this->mobile,
+                    // 'address' => [
+                    //     'city' => $this->city,
+                    //     'country' => $this->country
+                    // ],
+                    // 'shipping' => [
+                    //     'name' => $this->lastname . ' ' . $this->firstname,
+                    //     'address' => [
+                    //         'city' => $this->city,
+                    //         'country' => $this->country
+                    //     ],
+                    // ],
+                    'card' => [
+                        'number' => $this->card_no,
+                        'exp_month' => $this->exp_month,
+                        'exp_year' => $this->exp_year,
+                        'cvc' => $this->cvc,
                     ],
-                    'shipping' => [
-                        'name' => $this->lastname . ' ' . $this->firstname,
-                        'address' => [
-                            'city' => $this->city,
-                            'country' => $this->country
-                        ],
-                    ],
-                    'source' => request('stripeToken') // Utilise le token transmis par le frontend
+
                 ]);
 
-                $charge = $stripe->charges()->create([
-                    'customer' => $customer['id'],
+                $charge = \Stripe\Charge::create([
+                    //'customer' => $customer['id'],
+                    'source' => $token->id,
                     'amount' => 1000, // Montant en centimes (10.00 € ici)
                     'currency' => 'eur',
                     'description' => 'Paiement pour la commande no ' . $order->id,
-                    //'source' => $customer->id,
+
                 ]);
 
                 if ($charge['status'] == 'succeeded') {
@@ -226,6 +236,12 @@ class ReservationComponent extends Component
         } else if ($this->thankyou) {
             return redirect()->route('thankyou');
         }
+    }
+
+    public function boot()
+    {
+        View::share('value', 'https://www.homes-services.com/service/make-up/reservation');
+        View::share('value2', 'https://www.homes-services.com/service/make-up/reservation');
     }
 
     public function render()

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Contact;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class ContactComponent extends Component
@@ -39,6 +40,12 @@ class ContactComponent extends Component
 
         $contact->save();
         session()->flash('message', 'Message soumis avec succes !');
+    }
+
+    public function boot()
+    {
+        View::share('value', 'https://www.homes-services.com/contact');
+        View::share('value2', 'https://www.homes-services.com/contact');
     }
 
     public function render()

@@ -4,14 +4,27 @@
 <head>
     <meta charset="utf-8">
 
-    {!! SEO::generate(true) !!}
 
     <meta property="og:url" content="https://www.homes-services.com/" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-
-    <meta http-equiv="Content-Language" content="fr-FR" />
-    <meta property="og:locale" content="fr-FR" />
+    <meta http-equiv="Content-Language" content="fr-TG" />
+    <meta name="geo.country" content="TG" />
+    <meta name="country" content="TG" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6777ef" />
+    <meta property="og:locale" content="fr-TG" />
     <meta property="og:country-name" content="Togo" />
+
+
+    <meta property="og:url" content="{{ isset($value) ? $value : '' }}" />
+    <link rel="canonical" href="{{ isset($value2) ? $value2 : '' }}" />
+
+
+    {!! SEO::generate(true) !!}
+
+
+
+    <link rel="alternate" href="https://www.homes-services.com/" hreflang="fr" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -63,10 +76,15 @@
 
 
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "ns00i2tahu");
     </script>
 
