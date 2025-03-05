@@ -34,11 +34,10 @@ class ServiceDetailComponent extends Component
         $service_id = Service::where('slug', $this->service_slug)->select('id')->first();
         $sproviders = ServiceProvider::where('service_id', $service_id->id)->get();
 
-        foreach ($services as $service) {
-            View::share('value', 'https://www.homes-services.com/{{ $service->name }}/service');
-            View::share('value2', 'https://www.homes-services.com/{{ $service->name }}/service');
+        if ($services) {
+            View::share('value', "https://www.homes-services.com/service/{$services->slug}/details");
+            View::share('value2', "https://www.homes-services.com/service/{$services->slug}/details");
         }
-
 
         return view('livewire.service-detail-component', ['services' => $services, 'r_services' => $r_services, 'sproviders' => $sproviders])->layout('layouts.base');
     }

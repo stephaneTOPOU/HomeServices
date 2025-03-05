@@ -12,8 +12,8 @@ class HomeComponent extends Component
 {
     public function boot()
     {
-        View::share('value', 'https://www.homes-services.com/');
-        View::share('value2', 'https://www.homes-services.com/');
+        View::share('value', "https://www.homes-services.com/");
+        View::share('value2', "https://www.homes-services.com/");
     }
 
     public function render()

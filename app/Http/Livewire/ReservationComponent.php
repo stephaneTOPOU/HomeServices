@@ -238,15 +238,19 @@ class ReservationComponent extends Component
         }
     }
 
-    public function boot()
-    {
-        View::share('value', 'https://www.homes-services.com/service/make-up/reservation');
-        View::share('value2', 'https://www.homes-services.com/service/make-up/reservation');
-    }
+
 
     public function render()
     {
+        $service = Service::where('slug', $this->service_slug)->first();
+
+        if ($service) {
+            View::share('value', "https://www.homes-services.com/service/{$service->slug}/reservation");
+            View::share('value2', "https://www.homes-services.com/service/{$service->slug}/reservation");
+        }
+
         $this->verifyReservation();
+
         return view('livewire.reservation-component')->layout('layouts.base');
     }
 }

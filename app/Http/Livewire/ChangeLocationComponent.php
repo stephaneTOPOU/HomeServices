@@ -28,8 +28,8 @@ class ChangeLocationComponent extends Component
 
     public function boot()
     {
-        View::share('value', 'https://www.homes-services.com/change-location');
-        View::share('value2', 'https://www.homes-services.com/change-location');
+        View::share('value', "https://www.homes-services.com/change-location");
+        View::share('value2', "https://www.homes-services.com/change-location");
     }
 
     public function render()

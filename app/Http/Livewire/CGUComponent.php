@@ -9,8 +9,8 @@ class CGUComponent extends Component
 {
     public function boot()
     {
-        View::share('value', 'https://www.homes-services.com/cgu');
-        View::share('value2', 'https://www.homes-services.com/cgu');
+        View::share('value', "https://www.homes-services.com/cgu");
+        View::share('value2', "https://www.homes-services.com/cgu");
     }
 
     public function render()

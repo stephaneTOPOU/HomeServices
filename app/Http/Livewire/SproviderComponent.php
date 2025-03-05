@@ -23,9 +23,9 @@ class SproviderComponent extends Component
         $services = Service::where('slug', $this->service_slug)->first();
         $sproviders = ServiceProvider::where('service_id', $service_id->id)->where('valide', 1)->get();
 
-        foreach ($sproviders as $sproviders) {
-            View::share('value', 'https://www.homes-services.com/{{ $sproviders->name }}/service');
-            View::share('value2', 'https://www.homes-services.com/{{ $sproviders->name }}/service');
+        if ($services) {
+            View::share('value', "https://www.homes-services.com/service/{$services->slug}");
+            View::share('value2', "https://www.homes-services.com/service/{$services->slug}");
         }
 
         return view('livewire.sprovider-component', ['sproviders' => $sproviders, 'services' => $services])->layout('layouts.base');

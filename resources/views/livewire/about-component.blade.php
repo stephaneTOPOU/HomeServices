@@ -53,17 +53,17 @@
                                 <div class="item-team-01">
                                     <img src="{{ asset('assets/img/team/2.jpg') }}" alt="LDN Services">
                                     <div class="info-team">
-                                        <h4>TOPOU Stéphane
+                                        <h4>TOPOU Koffi Vivien
                                             <span>Informaticien</span>
                                         </h4>
                                         <p>Nous sommes une équipe de personnes productives et efficaces dans le domaine de service en ligne.</p>
                                         <ul class="social-team">
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                            <li><a href="https://www.facebook.com/profile.php?id=61573047160055" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="https://x.com/stephanetopou" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="https://www.youtube.com/@solutionLogicielleExpert" target="_blank"><i class="fa fa-youtube"></i></a></li>
                                         </ul>
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="titles">
-                                        <h2><span>¿</span>Pourquoi <span>Réserver</span> sur LDN Servicess<span>?</span></h2>                                        
+                                        <h2><span>¿</span>Pourquoi <span>Réserver</span> sur LDN Servicess<span>?</span></h2>
                                         <hr class="tall">
                                     </div>
                                 </div>

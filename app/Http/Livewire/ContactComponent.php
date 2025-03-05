@@ -44,8 +44,8 @@ class ContactComponent extends Component
 
     public function boot()
     {
-        View::share('value', 'https://www.homes-services.com/contact');
-        View::share('value2', 'https://www.homes-services.com/contact');
+        View::share('value', "https://www.homes-services.com/contact");
+        View::share('value2', "https://www.homes-services.com/contact");
     }
 
     public function render()

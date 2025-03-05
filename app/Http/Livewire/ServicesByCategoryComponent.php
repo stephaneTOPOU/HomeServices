@@ -18,13 +18,13 @@ class ServicesByCategoryComponent extends Component
     public function render()
     {
         $categories = ServiceCategory::where('slug', $this->category_slug)->first();
+
         //$categories = ServiceCategory::with('services')->get();
-
-
         //dd($this->category_slug);
-        foreach ($categories as $categorie) {
-            View::share('value', 'https://www.homes-services.com/{{ $categorie->name }}/service');
-            View::share('value2', 'https://www.homes-services.com/{{ $categorie->name }}/service');
+
+        if ($categories) {
+            View::share('value', "https://www.homes-services.com/{$categories->slug}/service");
+            View::share('value2', "https://www.homes-services.com/{$categories->slug}/service");
         }
 
         return view('livewire.services-by-category-component', ['categories' => $categories])->layout('layouts.base');

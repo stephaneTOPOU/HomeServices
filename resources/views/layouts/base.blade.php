@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
 
-    <meta property="og:url" content="https://www.homes-services.com/" />
+    <meta property="og:url" content="{{ isset($value) ? $value : '' }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta http-equiv="Content-Language" content="fr-TG" />
     <meta name="geo.country" content="TG" />
@@ -15,16 +15,10 @@
     <meta property="og:locale" content="fr-TG" />
     <meta property="og:country-name" content="Togo" />
 
-
-    <meta property="og:url" content="{{ isset($value) ? $value : '' }}" />
-    <link rel="canonical" href="{{ isset($value2) ? $value2 : '' }}" />
-
-
     {!! SEO::generate(true) !!}
 
-
-
     <link rel="alternate" href="https://www.homes-services.com/" hreflang="fr" />
+    <link rel="canonical" href="{{ isset($value2) ? $value2 : '' }}" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
