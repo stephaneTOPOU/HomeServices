@@ -7,13 +7,13 @@
 
     <meta property="og:url" content="{{ isset($value) ? $value : '' }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <meta http-equiv="Content-Language" content="fr-TG" />
-    <meta name="geo.country" content="TG" />
-    <meta name="country" content="TG" />
+    <meta http-equiv="Content-Language" content="fr-BE" />
+    <meta name="geo.country" content="BE" />
+    <meta name="country" content="BE" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#6777ef" />
-    <meta property="og:locale" content="fr-TG" />
-    <meta property="og:country-name" content="Togo" />
+    <meta property="og:locale" content="fr-BE" />
+    <meta property="og:country-name" content="Belgique" />
 
     {!! SEO::generate(true) !!}
 
@@ -106,7 +106,7 @@
                             <li class="text-left"><a href="tel:+32499914473"><i class="fa fa-phone"></i>
                                     +32 499 91 44 73</a></li>
                             <li class="text-right"><a href="{{ route('home.change.location') }}"><i
-                                        class="fa fa-map-marker"></i> Lomé, Togo</a></li>
+                                        class="fa fa-map-marker"></i> Liège, Belgique</a></li>
                         </ul>
                     </div>
                     @livewire('location-component')

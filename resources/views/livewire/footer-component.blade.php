@@ -43,7 +43,7 @@
                 <h3>CONTACT</h3>
                 <ul class="contact_footer">
                     <li class="location">
-                        <i class="fa fa-map-marker"></i> <a href="">Lomé, Togo</a>
+                        <i class="fa fa-map-marker"></i> <a href="">Liège, Belgique</a>
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i> <a
@@ -70,7 +70,7 @@
                 <h3 class="mlist-h">CONTACT</h3>
                 <ul class="contact_footer mlist">
                     <li class="location">
-                        <i class="fa fa-map-marker"></i> <a href="">Lomé, Togo</a>
+                        <i class="fa fa-map-marker"></i> <a href="">Liège, Belgique</a>
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i> <a

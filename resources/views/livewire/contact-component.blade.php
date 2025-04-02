@@ -20,7 +20,7 @@
         </div>
         <div id="map" class="honmob">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.738644950409!2d1.2586903999999999!3d6.1482472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab7eb7808df5ed7%3A0xa7193cf4a08c5614!2sSolution%20Logicielle%20Expert!5e0!3m2!1sfr!2stg!4v1739523892515!5m2!1sfr!2stg"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2405.541400330664!2d5.578452576567964!3d50.63154977162728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDM3JzUzLjYiTiA1wrAzNCc1MS43IkU!5e1!3m2!1sfr!2stg!4v1743592685395!5m2!1sfr!2stg"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade" style="border:0;" allowfullscreen="false"
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade">
@@ -35,7 +35,7 @@
                                 <h4>Notre Bureau</h4>
                                 <address>
                                     <strong>LDN Services</strong><br>
-                                    <i class="fa fa-map-marker"></i><strong>Adresss: </strong>Lomé, Togo<br>
+                                    <i class="fa fa-map-marker"></i><strong>Adresss: </strong>Liège, Belgique<br>
                                     <i class="fa fa-phone"></i><strong>Téléphone: </strong> +32 499 91 44 73
                                 </address>
                                 <address>

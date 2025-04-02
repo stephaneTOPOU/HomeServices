@@ -5,9 +5,9 @@
             @if (Session::has('city'))
                 <li><a href="{{ route('home.change.location') }}"><i class="fa fa-map-marker"></i> {{ Session::get('city') }}, {{ Session::get('country') }}</a></li>
             @else
-                <li><a href="{{ route('home.change.location') }}"><i class="fa fa-map-marker"></i> Lomé, Togo</a></li>
+                <li><a href="{{ route('home.change.location') }}"><i class="fa fa-map-marker"></i> Liège, Belgique</a></li>
             @endif
-            
+
         </ul>
     </div>
 </div>
